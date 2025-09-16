@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 200);
 
             if (clickCount === 5) {
-                alert(currentLang === 'zh' ? '🐱 你发现了一个彩蛋！Guppy喜欢POP Cat！' : '🐱 You found an easter egg! Guppy loves POP Cat!');
+                alert(currentLang === 'zh' ? '你发现了一个彩蛋！' : 'You found an easter egg!');
                 clickCount = 0;
             }
         });
@@ -186,9 +186,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // 页面加载完成提示
-    console.log('🎉 Guppy的个人网站加载完成！');
-    console.log('🌐 支持中英文切换');
-    console.log('⌨️ 快捷键: Ctrl+L (切换语言), Ctrl+D (切换主题)');
     console.log('🐱 点击头像5次有彩蛋哦！');
-
 });

@@ -56,7 +56,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -119,7 +119,7 @@ main {
 
 .section {
     padding: 4rem 2rem;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
@@ -132,7 +132,7 @@ main {
 /* Hero区域 */
 .hero-section {
     padding: 6rem 2rem 4rem;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     background: transparent;
     box-shadow: none;
@@ -204,6 +204,8 @@ body.dark-theme .hero-subtitle {
     border-radius: 50%;
     box-shadow: 0 12px 40px rgba(102, 126, 234, 0.3);
     transition: transform 0.3s ease;
+    object-fit: cover;
+    object-position: center;
 }
 
 .avatar-img:hover {
@@ -518,6 +520,8 @@ body.dark-theme .skill-category h3 {
 .skill-tag.html { background: linear-gradient(135deg, #e34f26 0%, #f06529 100%); }
 .skill-tag.js { background: linear-gradient(135deg, #f7df1e 0%, #ffcc02 100%); color: #333; }
 .skill-tag.sql { background: linear-gradient(135deg, #336791 0%, #4479a1 100%); }
+.skill-tag.matlab { background: linear-gradient(135deg, #e16737 0%, #ff6b35 100%); }
+.skill-tag.java { background: linear-gradient(135deg, #f89820 0%, #f89820 100%); }
 .skill-tag.ai { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
 .skill-tag.ml { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); }
 .skill-tag.kg { background: linear-gradient(135deg, #00d2d3 0%, #54a0ff 100%); }
@@ -616,7 +620,7 @@ body.dark-theme footer {
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -727,6 +731,8 @@ body.dark-theme footer {
     .avatar-img {
         width: 200px;
         height: 200px;
+        object-fit: cover;
+        object-position: center;
     }
 }
 

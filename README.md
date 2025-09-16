@@ -82,7 +82,7 @@
    git commit -m "Initial commit: Personal resume website"
 
    # 添加远程仓库（替换为您的仓库地址）
-   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+   git remote add origin https://github.com/Guppy608/guppy-resume.git
    git branch -M main
    git push -u origin main
    ```
@@ -96,7 +96,7 @@
    - 点击 "Save"
 
 3. **访问网站**
-   - 部署完成后，访问地址为: `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME`
+   - 部署完成后，访问地址为: `https://Guppy608.github.io/guppy-resume`
    - 通常需要等待 5-10 分钟生效
 
 ### 🎯 Netlify 部署（备选方案）
@@ -134,41 +134,3 @@
 1. **颜色方案**: 修改 `css/style.css` 中的 CSS 变量
 2. **字体选择**: 更改 Google Fonts 引用
 3. **布局调整**: 修改 CSS Grid 和 Flexbox 布局
-
-## 🌐 浏览器兼容性
-
-- ✅ **Chrome 80+**: 完全支持
-- ✅ **Firefox 75+**: 完全支持
-- ✅ **Safari 13+**: 完全支持
-- ✅ **Edge 80+**: 完全支持
-- ⚠️ **IE**: 不支持（建议升级到现代浏览器）
-
-## 📱 设备支持
-
-- ✅ **桌面端**: 1200px+ 宽屏显示
-- ✅ **平板端**: 768px-1199px 适配
-- ✅ **移动端**: 320px-767px 优化
-
-## 🚀 性能优化
-
-- **CSS**: 压缩和合并样式文件
-- **图片**: 使用 WebP 格式和适当尺寸
-- **字体**: 预加载关键字体文件
-- **缓存**: 设置适当的缓存策略
-
-## 📞 技术支持
-
-如果您在部署过程中遇到问题：
-
-1. **检查文件路径**: 确保所有文件路径正确
-2. **浏览器控制台**: 查看是否有 JavaScript 错误
-3. **网络检查**: 确认所有资源正常加载
-4. **清除缓存**: 尝试硬刷新页面 (Ctrl+F5)
-
-## 📄 许可证
-
-本项目采用 MIT 许可证，您可以自由使用、修改和分发。
-
----
-
-**现代化个人简历网站，展示专业形象，助力职业发展！** ✨
