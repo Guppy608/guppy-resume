@@ -121,8 +121,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== Typewriter Effect =====
     const typingEl = document.querySelector('.typing-text');
     const titles = {
-        zh: 'AI产品经理 & 算法研究员',
-        en: 'AI Product Manager & Algorithm Researcher'
+        zh: 'AI产品经理',
+        en: 'AI Product Manager'
     };
     let typeTimer = null;
 

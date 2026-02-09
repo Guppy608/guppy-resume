@@ -717,6 +717,12 @@ main {
     color: #fff;
 }
 
+.contact-link.email:hover {
+    border-color: #0078d4;
+    background: #0078d4;
+    color: #fff;
+}
+
 /* ===== Footer ===== */
 footer {
     background: var(--bg-primary);
