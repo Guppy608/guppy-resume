@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -18,47 +18,59 @@
                 <li><a href="#achievements" data-zh="荣誉成就" data-en="Achievements">荣誉成就</a></li>
                 <li><a href="#contact" data-zh="联系方式" data-en="Contact">联系方式</a></li>
             </ul>
-            <button id="langToggle" class="lang-toggle">EN</button>
+            <div class="nav-controls">
+                <button id="langToggle" class="lang-toggle">EN</button>
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon">☽</span>
+                </button>
+            </div>
         </nav>
     </header>
 
     <main>
         <!-- Hero区域 -->
         <section id="hero" class="hero-section">
+            <canvas id="heroCanvas"></canvas>
             <div class="hero-content">
                 <div class="hero-text">
+                    <div class="terminal-label"><span class="terminal-prompt">$</span> whoami</div>
                     <h1 class="hero-name" data-zh="Guppy" data-en="Guppy">Guppy</h1>
-                    <h2 class="hero-title" data-zh="AI产品经理 & 算法研究员" data-en="AI Product Manager & Algorithm Researcher">AI产品经理 & 算法研究员</h2>
+                    <h2 class="hero-title"><span class="typing-text"></span><span class="cursor">|</span></h2>
                     <p class="hero-subtitle" data-zh="INTJ | 数学硕士 | 北京科技大学｜帝国理工学院" data-en="INTJ | Master's in Mathematics | USTB | Imperial College London">INTJ | 数学硕士 | 北京科技大学｜帝国理工学院</p>
                     <div class="hero-badges">
-                        <span class="badge" data-zh="🇨🇳 中国" data-en="🇨🇳 China">🇨🇳 中国</span>
-                        <span class="badge" data-zh="🇬🇧 英国" data-en="🇬🇧 UK">🇬🇧 英国</span>
-                        <span class="badge" data-zh="📖 AI产品经理" data-en="📖 AI Product Manager">📖 AI产品经理</span>
-                        <span class="badge" data-zh="🚀 算法研究员" data-en="🚀 Algorithm Researcher">🚀 算法研究员</span>
+                        <span class="badge" data-zh="CN" data-en="CN">CN</span>
+                        <span class="badge" data-zh="UK" data-en="UK">UK</span>
+                        <span class="badge" data-zh="AI产品经理" data-en="AI PM">AI产品经理</span>
+                        <span class="badge" data-zh="算法研究员" data-en="Algorithm Researcher">算法研究员</span>
                     </div>
                 </div>
                 <div class="hero-avatar">
-                    <img src="images/avatar.png" alt="Guppy Avatar" class="avatar-img">
+                    <div class="avatar-ring">
+                        <img src="images/avatar.png" alt="Guppy Avatar" class="avatar-img">
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- 关于我区域 -->
         <section id="about" class="section">
-            <h2 class="section-title" data-zh="关于我" data-en="About Me">关于我</h2>
+            <h2 class="section-title">
+                <span class="section-index">01.</span>
+                <span data-zh="关于我" data-en="About Me">关于我</span>
+            </h2>
             <div class="about-grid">
                 <div class="about-card">
-                    <div class="card-icon">🎓</div>
+                    <div class="card-icon">{ edu }</div>
                     <h3 data-zh="学术背景" data-en="Academic Background">学术背景</h3>
                     <p data-zh="北京科技大学数学硕士，专注于算法优化与数据科学研究。曾在帝国理工学院进行为期8个月的访问研究，深入探索机器学习前沿技术。" data-en="Master's in Mathematics at University of Science and Technology Beijing, focusing on algorithm optimization and data science research. Conducted 8-month visiting research at Imperial College London, exploring cutting-edge machine learning technologies.">北京科技大学数学硕士，专注于算法优化与数据科学研究。曾在帝国理工学院进行为期8个月的访问研究，深入探索机器学习前沿技术。</p>
                 </div>
                 <div class="about-card">
-                    <div class="card-icon">🧠</div>
+                    <div class="card-icon">{ mind }</div>
                     <h3 data-zh="性格特质" data-en="Personality">性格特质</h3>
                     <p data-zh="INTJ，具备强大的逻辑思维和系统性分析能力。善于将复杂的理论转化为实际的技术解决方案，在AI产品设计和算法优化方面表现卓越。" data-en="INTJ personality type with strong logical thinking and systematic analysis capabilities. Excellent at transforming complex theories into practical technical solutions, demonstrating outstanding performance in AI product design and algorithm optimization.">INTJ，具备强大的逻辑思维和系统性分析能力。善于将复杂的理论转化为实际的技术解决方案，在AI产品设计和算法优化方面表现卓越。</p>
                 </div>
                 <div class="about-card">
-                    <div class="card-icon">🐱</div>
+                    <div class="card-icon">{ life }</div>
                     <h3 data-zh="个人爱好" data-en="Personal Interests">个人爱好</h3>
                     <p data-zh="POP猫爱好者，热衷于探索有趣的互联网文化。同时对算法竞赛、数据挖掘和游戏策略分析有着浓厚兴趣。" data-en="POP Cat enthusiast with a passion for exploring interesting internet culture. Also deeply interested in algorithm competitions, data mining, and game strategy analysis.">POP猫爱好者，热衷于探索有趣的互联网文化。同时对算法竞赛、数据挖掘和游戏策略分析有着浓厚兴趣。</p>
                 </div>
@@ -67,7 +79,10 @@
 
         <!-- 个人经历区域 -->
         <section id="experience" class="section">
-            <h2 class="section-title" data-zh="个人经历" data-en="Personal Experience">个人经历</h2>
+            <h2 class="section-title">
+                <span class="section-index">02.</span>
+                <span data-zh="个人经历" data-en="Personal Experience">个人经历</span>
+            </h2>
             <div class="experience-timeline">
                 <div class="timeline-item">
                     <span class="timeline-date" data-zh="2024.08 - 2025.06" data-en="Aug 2024 - Jun 2025">2024.08 - 2025.06</span>
@@ -146,25 +161,27 @@
                 </div>
             </div>
         </section>
-
         <!-- 荣誉成就区域 -->
         <section id="achievements" class="section">
-            <h2 class="section-title" data-zh="荣誉成就" data-en="Achievements & Honors">荣誉成就</h2>
+            <h2 class="section-title">
+                <span class="section-index">03.</span>
+                <span data-zh="荣誉成就" data-en="Achievements & Honors">荣誉成就</span>
+            </h2>
             <div class="achievements-grid">
                 <div class="achievement-card gold">
-                    <div class="achievement-icon">🏆</div>
+                    <div class="achievement-icon">{ kaggle }</div>
                     <h3 data-zh="Kaggle金牌观察员" data-en="Kaggle Gold Medal Observer">Kaggle金牌观察员</h3>
                     <p data-zh="数据挖掘与风控领域" data-en="Data Mining & Risk Control">数据挖掘与风控领域</p>
                     <div class="achievement-badge" data-zh="数据科学" data-en="Data Science">数据科学</div>
                 </div>
                 <div class="achievement-card silver">
-                    <div class="achievement-icon">🎮</div>
+                    <div class="achievement-icon">{ game }</div>
                     <h3 data-zh="大富翁4邀请赛超级粉丝" data-en="Richman 4 Tournament Super Fan">大富翁4邀请赛超级粉丝</h3>
                     <p data-zh="策略游戏分析专家" data-en="Strategy Game Analysis Expert">策略游戏分析专家</p>
                     <div class="achievement-badge" data-zh="策略分析" data-en="Strategy Analysis">策略分析</div>
                 </div>
                 <div class="achievement-card bronze">
-                    <div class="achievement-icon">⚡</div>
+                    <div class="achievement-icon">{ data }</div>
                     <h3 data-zh="宝可梦排行榜前10观众" data-en="Pokemon Leaderboard Top10 Spectator">宝可梦排行榜前10观众</h3>
                     <p data-zh="竞技游戏数据分析" data-en="Competitive Gaming Data Analysis">竞技游戏数据分析</p>
                     <div class="achievement-badge" data-zh="数据分析" data-en="Data Analysis">数据分析</div>
@@ -174,55 +191,60 @@
 
         <!-- 技能展示区域 -->
         <section id="skills" class="section">
-            <h2 class="section-title" data-zh="技术栈" data-en="Tech Stack">技术栈</h2>
+            <h2 class="section-title">
+                <span class="section-index">04.</span>
+                <span data-zh="技术栈" data-en="Tech Stack">技术栈</span>
+            </h2>
             <div class="skills-container">
                 <div class="skill-category">
-                    <h3 data-zh="编程语言" data-en="Programming Languages">编程语言</h3>
+                    <h3><span class="comment-prefix">// </span><span data-zh="编程语言" data-en="Programming Languages">编程语言</span></h3>
                     <div class="skill-tags">
-                        <span class="skill-tag python">Python</span>
-                        <span class="skill-tag matlab">Matlab</span>
-                        <span class="skill-tag html">HTML/CSS</span>
-                        <span class="skill-tag sql">SQL</span>
-                        <span class="skill-tag java">Java</span>
+                        <span class="skill-tag" style="--skill-level:90%">Python</span>
+                        <span class="skill-tag" style="--skill-level:75%">Matlab</span>
+                        <span class="skill-tag" style="--skill-level:60%">HTML/CSS</span>
+                        <span class="skill-tag" style="--skill-level:70%">SQL</span>
+                        <span class="skill-tag" style="--skill-level:55%">Java</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3 data-zh="专业领域" data-en="Expertise">专业领域</h3>
+                    <h3><span class="comment-prefix">// </span><span data-zh="专业领域" data-en="Expertise">专业领域</span></h3>
                     <div class="skill-tags">
-                        <span class="skill-tag ai">人工智能</span>
-                        <span class="skill-tag ml">机器学习</span>
-                        <span class="skill-tag ml">深度学习</span>
-                        <span class="skill-tag kg">知识图谱</span>
-                        <span class="skill-tag opt">运筹优化</span>
+                        <span class="skill-tag" style="--skill-level:90%" data-zh="人工智能" data-en="AI">人工智能</span>
+                        <span class="skill-tag" style="--skill-level:85%" data-zh="机器学习" data-en="ML">机器学习</span>
+                        <span class="skill-tag" style="--skill-level:80%" data-zh="深度学习" data-en="Deep Learning">深度学习</span>
+                        <span class="skill-tag" style="--skill-level:75%" data-zh="知识图谱" data-en="Knowledge Graph">知识图谱</span>
+                        <span class="skill-tag" style="--skill-level:85%" data-zh="运筹优化" data-en="Operations Research">运筹优化</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3 data-zh="产品技能" data-en="Product Skills">产品技能</h3>
+                    <h3><span class="comment-prefix">// </span><span data-zh="产品技能" data-en="Product Skills">产品技能</span></h3>
                     <div class="skill-tags">
-                        <span class="skill-tag pm">产品设计</span>
-                        <span class="skill-tag data">数据分析</span>
-                        <span class="skill-tag data">数据挖掘</span>
-                        <span class="skill-tag algo">算法设计</span>
-                        <span class="skill-tag research">学术研究</span>
+                        <span class="skill-tag" style="--skill-level:90%" data-zh="产品设计" data-en="Product Design">产品设计</span>
+                        <span class="skill-tag" style="--skill-level:85%" data-zh="数据分析" data-en="Data Analysis">数据分析</span>
+                        <span class="skill-tag" style="--skill-level:80%" data-zh="数据挖掘" data-en="Data Mining">数据挖掘</span>
+                        <span class="skill-tag" style="--skill-level:85%" data-zh="算法设计" data-en="Algorithm Design">算法设计</span>
+                        <span class="skill-tag" style="--skill-level:80%" data-zh="学术研究" data-en="Academic Research">学术研究</span>
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- 联系方式区域 -->
         <section id="contact" class="section">
-            <h2 class="section-title" data-zh="联系方式" data-en="Get In Touch">联系方式</h2>
+            <h2 class="section-title">
+                <span class="section-index">05.</span>
+                <span data-zh="联系方式" data-en="Get In Touch">联系方式</span>
+            </h2>
             <div class="contact-container">
                 <div class="contact-intro">
                     <p data-zh="欢迎与我讨论AI算法、产品设计，或者聊聊可爱的POP猫！" data-en="Feel free to discuss AI algorithms, product design, or chat about adorable cats!">欢迎与我讨论AI算法、产品设计，或者聊聊可爱的POP猫！</p>
                 </div>
                 <div class="contact-links">
                     <a href="https://github.com/Guppy608" class="contact-link github" target="_blank">
-                        <span class="contact-icon">🐱</span>
+                        <span class="contact-icon">&#60;/&#62;</span>
                         <span data-zh="GitHub" data-en="GitHub">GitHub</span>
                     </a>
                     <a href="https://www.zhihu.com/people/Guppy0608/posts" class="contact-link zhihu" target="_blank">
-                        <span class="contact-icon">✍️</span>
+                        <span class="contact-icon">Zh</span>
                         <span data-zh="知乎专栏" data-en="Zhihu Column">知乎专栏</span>
                     </a>
                 </div>
@@ -234,10 +256,10 @@
         <div class="footer-content">
             <p data-zh="&copy; 2025 Guppy - AI产品经理 & 算法研究员" data-en="&copy; 2025 Guppy - AI Product Manager & Algorithm Researcher">&copy; 2025 Guppy - AI产品经理 & 算法研究员</p>
             <div class="footer-links">
-                <span data-zh="🇨🇳 北京科技大学" data-en="🇨🇳 USTB">🇨🇳 北京科技大学</span>
-                <span data-zh="🇬🇧 帝国理工学院" data-en="🇬🇧 Imperial College">🇬🇧 帝国理工学院</span>
-                <span data-zh="🚀 京东物流" data-en="🚀 JD Logistics">🚀 京东物流</span>
-                <span data-zh="🧐 人工智能研究院" data-en="🧐 AI Research Institute">🧐 人工智能研究院</span>
+                <span data-zh="北京科技大学" data-en="USTB">北京科技大学</span>
+                <span data-zh="帝国理工学院" data-en="Imperial College">帝国理工学院</span>
+                <span data-zh="京东物流" data-en="JD Logistics">京东物流</span>
+                <span data-zh="人工智能研究院" data-en="AI Research Institute">人工智能研究院</span>
             </div>
         </div>
     </footer>

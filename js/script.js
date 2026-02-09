@@ -1,25 +1,159 @@
-// 等待DOM加载完成
 document.addEventListener('DOMContentLoaded', function() {
 
-    // 获取所有需要的元素
+    // ===== Global State =====
     const langToggle = document.getElementById('langToggle');
+    const themeToggle = document.getElementById('themeToggle');
+    let currentLang = 'zh';
 
-    // 全局变量
-    let currentLang = 'zh'; // 默认中文
+    // ===== Particle Network Animation =====
+    const canvas = document.getElementById('heroCanvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouse = { x: null, y: null };
+        let animationId;
 
-    // 语言切换功能
+        function resizeCanvas() {
+            const hero = canvas.parentElement;
+            canvas.width = hero.offsetWidth;
+            canvas.height = hero.offsetHeight;
+            initParticles();
+        }
+
+        function getParticleCount() {
+            const w = canvas.width;
+            if (w < 480) return 30;
+            if (w < 768) return 45;
+            return 70;
+        }
+
+        function initParticles() {
+            particles = [];
+            const count = getParticleCount();
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    r: Math.random() * 2 + 1
+                });
+            }
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const isDark = document.body.classList.contains('dark-theme');
+            const baseColor = isDark ? '229,231,235' : '26,26,42';
+            const greenColor = isDark ? '16,185,129' : '14,165,233';
+
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                // Move
+                p.x += p.vx;
+                p.y += p.vy;
+                // Bounce
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                // Mouse attraction
+                if (mouse.x !== null) {
+                    const dx = mouse.x - p.x;
+                    const dy = mouse.y - p.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 150) {
+                        p.vx += dx * 0.0003;
+                        p.vy += dy * 0.0003;
+                    }
+                }
+
+                // Draw particle
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(' + baseColor + ',0.5)';
+                ctx.fill();
+
+                // Draw connections
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dx = p.x - p2.x;
+                    const dy = p.y - p2.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 120) {
+                        const alpha = (1 - dist / 120) * 0.3;
+                        let nearMouse = false;
+                        if (mouse.x !== null) {
+                            const mx = (p.x + p2.x) / 2 - mouse.x;
+                            const my = (p.y + p2.y) / 2 - mouse.y;
+                            nearMouse = Math.sqrt(mx * mx + my * my) < 150;
+                        }
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = nearMouse
+                            ? 'rgba(' + greenColor + ',' + alpha + ')'
+                            : 'rgba(' + baseColor + ',' + alpha + ')';
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+            animationId = requestAnimationFrame(drawParticles);
+        }
+
+        canvas.parentElement.addEventListener('mousemove', function(e) {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+            canvas.style.pointerEvents = 'auto';
+        });
+
+        canvas.parentElement.addEventListener('mouseleave', function() {
+            mouse.x = null;
+            mouse.y = null;
+            canvas.style.pointerEvents = 'none';
+        });
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        drawParticles();
+    }
+
+    // ===== Typewriter Effect =====
+    const typingEl = document.querySelector('.typing-text');
+    const titles = {
+        zh: 'AI产品经理 & 算法研究员',
+        en: 'AI Product Manager & Algorithm Researcher'
+    };
+    let typeTimer = null;
+
+    function typeWriter(text, el, callback) {
+        if (typeTimer) clearTimeout(typeTimer);
+        el.textContent = '';
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                el.textContent += text.charAt(i);
+                i++;
+                typeTimer = setTimeout(type, 60);
+            } else if (callback) {
+                callback();
+            }
+        }
+        type();
+    }
+
+    if (typingEl) {
+        typeWriter(titles[currentLang], typingEl);
+    }
+
+    // ===== Language Toggle =====
     function switchLanguage() {
         currentLang = currentLang === 'zh' ? 'en' : 'zh';
-
-        // 更新按钮文字
         langToggle.textContent = currentLang === 'zh' ? 'EN' : '中文';
-
-        // 更新页面语言属性
         document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
 
-        // 更新所有带有语言属性的元素
         const elementsWithLang = document.querySelectorAll('[data-zh][data-en]');
-        elementsWithLang.forEach(element => {
+        elementsWithLang.forEach(function(element) {
             const text = currentLang === 'zh' ? element.getAttribute('data-zh') : element.getAttribute('data-en');
             if (element.tagName === 'INPUT') {
                 element.placeholder = text;
@@ -28,140 +162,85 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // 保存语言设置到本地存储
-        localStorage.setItem('language', currentLang);
+        // Re-trigger typewriter
+        if (typingEl) {
+            typeWriter(titles[currentLang], typingEl);
+        }
 
-        // 添加切换动画效果
-        document.body.style.opacity = '0.8';
-        setTimeout(() => {
-            document.body.style.opacity = '1';
-        }, 200);
+        localStorage.setItem('language', currentLang);
     }
 
-    // 语言切换按钮事件
     langToggle.addEventListener('click', switchLanguage);
 
-    // 页面加载时恢复语言设置
     const savedLang = localStorage.getItem('language');
     if (savedLang && savedLang !== currentLang) {
         switchLanguage();
     }
 
-    // 主题切换功能（保留但简化）
+    // ===== Theme Toggle =====
     function toggleTheme() {
         document.body.classList.toggle('dark-theme');
         const isDark = document.body.classList.contains('dark-theme');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        const icon = themeToggle.querySelector('.theme-icon');
+        if (icon) icon.textContent = isDark ? '☀' : '☽';
     }
 
-    // 页面加载时恢复主题设置
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-theme');
+        const icon = themeToggle && themeToggle.querySelector('.theme-icon');
+        if (icon) icon.textContent = '☀';
     }
 
-    // 添加键盘快捷键
+    // ===== Keyboard Shortcuts =====
     document.addEventListener('keydown', function(e) {
-        // Ctrl/Cmd + D 切换主题
         if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
             e.preventDefault();
             toggleTheme();
         }
-        // Ctrl/Cmd + L 切换语言
         if ((e.ctrlKey || e.metaKey) && e.key === 'l') {
             e.preventDefault();
             switchLanguage();
         }
     });
 
-    // 平滑滚动到锚点
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    // ===== Smooth Scroll =====
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
 
-    // 技能标签悬停效果
-    document.querySelectorAll('.skill-tag').forEach(tag => {
-        tag.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-3px) scale(1.05)';
-        });
-
-        tag.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-
-    // 成就卡片点击效果
-    document.querySelectorAll('.achievement-card').forEach(card => {
-        card.addEventListener('click', function() {
-            this.style.transform = 'scale(0.98)';
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-            }, 150);
-        });
-    });
-
-    // 联系链接点击统计（可选）
-    document.querySelectorAll('.contact-link').forEach(link => {
-        link.addEventListener('click', function() {
-            const linkType = this.classList.contains('github') ? 'GitHub' :
-                           this.classList.contains('zhihu') ? 'Zhihu' : 'Discussion';
-            console.log(`🔗 用户点击了 ${linkType} 链接`);
-        });
-    });
-
-    // 头像点击彩蛋
-    const avatar = document.querySelector('.avatar-img');
-    if (avatar) {
-        let clickCount = 0;
-        avatar.addEventListener('click', function() {
-            clickCount++;
-            this.style.transform = 'scale(0.9) rotate(10deg)';
-            setTimeout(() => {
-                this.style.transform = 'scale(1) rotate(0deg)';
-            }, 200);
-
-            if (clickCount === 5) {
-                alert(currentLang === 'zh' ? '你发现了一个彩蛋！' : 'You found an easter egg!');
-                clickCount = 0;
-            }
-        });
-    }
-
-
-
-    // 页面滚动效果
+    // ===== Scroll Header Hide/Show =====
     let lastScrollTop = 0;
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         const header = document.querySelector('header');
-
         if (scrollTop > lastScrollTop && scrollTop > 100) {
-            // 向下滚动，隐藏导航栏
             header.style.transform = 'translateY(-100%)';
         } else {
-            // 向上滚动，显示导航栏
             header.style.transform = 'translateY(0)';
         }
         lastScrollTop = scrollTop;
     });
 
-    // 元素进入视口动画
+    // ===== Intersection Observer with Staggered Delay =====
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
+        entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
@@ -169,22 +248,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // 观察所有卡片元素
-    document.querySelectorAll('.about-card, .achievement-card, .timeline-item, .skill-category').forEach(el => {
+    const animatedEls = document.querySelectorAll('.about-card, .achievement-card, .timeline-item, .skill-category');
+    animatedEls.forEach(function(el, index) {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transition = 'opacity 0.5s ease ' + (index % 4) * 100 + 'ms, transform 0.5s ease ' + (index % 4) * 100 + 'ms';
         observer.observe(el);
     });
 
-    // 图片加载错误处理
-    document.querySelectorAll('img').forEach(img => {
+    // ===== Avatar Easter Egg =====
+    const avatar = document.querySelector('.avatar-img');
+    if (avatar) {
+        let clickCount = 0;
+        avatar.addEventListener('click', function() {
+            clickCount++;
+            this.style.transform = 'scale(0.9) rotate(10deg)';
+            setTimeout(function() {
+                avatar.style.transform = 'scale(1) rotate(0deg)';
+            }, 200);
+            if (clickCount === 5) {
+                alert(currentLang === 'zh' ? '你发现了一个彩蛋！' : 'You found an easter egg!');
+                clickCount = 0;
+            }
+        });
+    }
+
+    // ===== Image Error Handling =====
+    document.querySelectorAll('img').forEach(function(img) {
         img.addEventListener('error', function() {
-            console.warn('图片加载失败:', this.src);
-            // 可以设置默认图片或隐藏
+            console.warn('Image failed to load:', this.src);
         });
     });
 
-    // 页面加载完成提示
-    console.log('🐱 点击头像5次有彩蛋哦！');
 });
