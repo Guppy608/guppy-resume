@@ -5,123 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('themeToggle');
     let currentLang = 'zh';
 
-    // ===== Particle Network Animation =====
-    const canvas = document.getElementById('heroCanvas');
-    if (canvas) {
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        let mouse = { x: null, y: null };
-        let animationId;
-
-        function resizeCanvas() {
-            const hero = canvas.parentElement;
-            canvas.width = hero.offsetWidth;
-            canvas.height = hero.offsetHeight;
-            initParticles();
-        }
-
-        function getParticleCount() {
-            const w = canvas.width;
-            if (w < 480) return 30;
-            if (w < 768) return 45;
-            return 70;
-        }
-
-        function initParticles() {
-            particles = [];
-            const count = getParticleCount();
-            for (let i = 0; i < count; i++) {
-                particles.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    vx: (Math.random() - 0.5) * 0.5,
-                    vy: (Math.random() - 0.5) * 0.5,
-                    r: Math.random() * 2 + 1
-                });
-            }
-        }
-
-        function drawParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            const isDark = document.body.classList.contains('dark-theme');
-            const baseColor = isDark ? '229,231,235' : '26,26,42';
-            const greenColor = isDark ? '16,185,129' : '14,165,233';
-
-            for (let i = 0; i < particles.length; i++) {
-                const p = particles[i];
-                // Move
-                p.x += p.vx;
-                p.y += p.vy;
-                // Bounce
-                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-                // Mouse attraction
-                if (mouse.x !== null) {
-                    const dx = mouse.x - p.x;
-                    const dy = mouse.y - p.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 150) {
-                        p.vx += dx * 0.0003;
-                        p.vy += dy * 0.0003;
-                    }
-                }
-
-                // Draw particle
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(' + baseColor + ',0.5)';
-                ctx.fill();
-
-                // Draw connections
-                for (let j = i + 1; j < particles.length; j++) {
-                    const p2 = particles[j];
-                    const dx = p.x - p2.x;
-                    const dy = p.y - p2.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 120) {
-                        const alpha = (1 - dist / 120) * 0.3;
-                        let nearMouse = false;
-                        if (mouse.x !== null) {
-                            const mx = (p.x + p2.x) / 2 - mouse.x;
-                            const my = (p.y + p2.y) / 2 - mouse.y;
-                            nearMouse = Math.sqrt(mx * mx + my * my) < 150;
-                        }
-                        ctx.beginPath();
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.strokeStyle = nearMouse
-                            ? 'rgba(' + greenColor + ',' + alpha + ')'
-                            : 'rgba(' + baseColor + ',' + alpha + ')';
-                        ctx.lineWidth = 0.5;
-                        ctx.stroke();
-                    }
-                }
-            }
-            animationId = requestAnimationFrame(drawParticles);
-        }
-
-        canvas.parentElement.addEventListener('mousemove', function(e) {
-            const rect = canvas.getBoundingClientRect();
-            mouse.x = e.clientX - rect.left;
-            mouse.y = e.clientY - rect.top;
-            canvas.style.pointerEvents = 'auto';
-        });
-
-        canvas.parentElement.addEventListener('mouseleave', function() {
-            mouse.x = null;
-            mouse.y = null;
-            canvas.style.pointerEvents = 'none';
-        });
-
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-        drawParticles();
-    }
-
     // ===== Typewriter Effect =====
     const typingEl = document.querySelector('.typing-text');
     const titles = {
-        zh: 'AI产品经理',
+        zh: 'AI 产品经理',
         en: 'AI Product Manager'
     };
     let typeTimer = null;
@@ -248,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    const animatedEls = document.querySelectorAll('.about-card, .achievement-card, .timeline-item, .skill-category');
+    const animatedEls = document.querySelectorAll('.about-card, .video-showcase, .timeline-item, .skill-category');
     animatedEls.forEach(function(el, index) {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -256,21 +143,18 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    // ===== Avatar Easter Egg =====
-    const avatar = document.querySelector('.avatar-img');
-    if (avatar) {
-        let clickCount = 0;
-        avatar.addEventListener('click', function() {
-            clickCount++;
-            this.style.transform = 'scale(0.9) rotate(10deg)';
-            setTimeout(function() {
-                avatar.style.transform = 'scale(1) rotate(0deg)';
-            }, 200);
-            if (clickCount === 5) {
-                alert(currentLang === 'zh' ? '你发现了一个彩蛋！' : 'You found an easter egg!');
-                clickCount = 0;
-            }
-        });
+    // ===== Video Lazy Load =====
+    const videoEl = document.querySelector('.video-wrapper video');
+    if (videoEl) {
+        const videoObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    videoEl.preload = 'auto';
+                    videoObserver.unobserve(videoEl);
+                }
+            });
+        }, { threshold: 0.25 });
+        videoObserver.observe(videoEl);
     }
 
     // ===== Image Error Handling =====
