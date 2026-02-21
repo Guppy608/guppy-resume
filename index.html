@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guppy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#speaking" data-zh="演讲" data-en="Speaking">演讲</a></li>
+                <li><a href="#about" data-zh="关于我" data-en="About">关于我</a></li>
+                <li><a href="#experience" data-zh="职业经历" data-en="Experience">职业经历</a></li>
+                <li><a href="#skills" data-zh="技术栈" data-en="Skills">技术栈</a></li>
+                <li><a href="#contact" data-zh="联系方式" data-en="Contact">联系方式</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="langToggle" class="lang-toggle">EN</button>
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon">☽</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero区域 -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-name" data-zh="陈泽光" data-en="Guppy">陈泽光</h1>
+                    <h2 class="hero-title"><span class="typing-text"></span><span class="cursor">|</span></h2>
+                    <p class="hero-subtitle" data-zh="算法驱动产品增长 | INTJ | 北科大 &amp; Imperial College" data-en="Algorithm-Driven Product Growth | INTJ | USTB & Imperial College">算法驱动产品增长 | INTJ | 北科大 & Imperial College</p>
+                </div>
+                <div class="hero-avatar">
+                    <img src="images/avatar.png" alt="Guppy Avatar" class="avatar-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- 演讲视频区域 -->
+        <section id="speaking" class="section video-showcase">
+            <h2 class="section-title">
+                <span class="section-index">01.</span>
+                <span data-zh="Global AI Summit 2025" data-en="Global AI Summit 2025">Global AI Summit 2025</span>
+            </h2>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <video controls playsinline preload="metadata">
+                        <source src="video/2026-02-10-1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-caption">
+                    <h3 data-zh="Agentic Reinforcement Learning" data-en="Agentic Reinforcement Learning">Agentic Reinforcement Learning</h3>
+                    <p data-zh="行业论坛演讲 · 探讨如何将大语言模型与多步强化学习结合，构建能自主推理、规划和行动的 AI 智能体框架" data-en="Industry Forum Talk · Building an agentic framework combining LLMs with multi-step RL for autonomous reasoning, planning, and decision-making">行业论坛演讲 · 探讨如何将大语言模型与多步强化学习结合，构建能自主推理、规划和行动的 AI 智能体框架</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于我区域 -->
+        <section id="about" class="section">
+            <h2 class="section-title">
+                <span class="section-index">02.</span>
+                <span data-zh="关于我" data-en="About Me">关于我</span>
+            </h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">{ product }</div>
+                    <h3 data-zh="产品思维" data-en="Product Thinking">产品思维</h3>
+                    <p data-zh="擅长从算法能力出发定义产品方案，用数据验证假设、用实验驱动迭代。主导过从 0 到 1 的 AI 产品全流程——需求洞察、方案设计、算法选型、AB 实验、商业化落地，让技术真正转化为业务增长。" data-en="Skilled at defining product solutions from algorithmic capabilities, validating hypotheses with data and driving iterations through experiments. Led full-cycle AI product development from 0 to 1 — insight discovery, solution design, algorithm selection, A/B testing, and commercialization, turning technology into real business growth.">擅长从算法能力出发定义产品方案，用数据验证假设、用实验驱动迭代。主导过从 0 到 1 的 AI 产品全流程——需求洞察、方案设计、算法选型、AB 实验、商业化落地，让技术真正转化为业务增长。</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">{ algo }</div>
+                    <h3 data-zh="技术背景" data-en="Technical Background">技术背景</h3>
+                    <p data-zh="数学科班出身，运筹优化方向硕士，帝国理工学院访问研究员。对多目标优化、扩散模型、强化学习有深入理解，能与算法团队无障碍对话，精准评估技术可行性与投入产出比，是算法与业务之间的高效翻译器。" data-en="Formally trained in mathematics with a Master's in operations research and optimization. Visiting researcher at Imperial College London. Deep understanding of multi-objective optimization, diffusion models, and reinforcement learning. Communicates seamlessly with algorithm teams, accurately assessing technical feasibility and ROI — an efficient translator between algorithms and business.">数学科班出身，运筹优化方向硕士，帝国理工学院访问研究员。对多目标优化、扩散模型、强化学习有深入理解，能与算法团队无障碍对话，精准评估技术可行性与投入产出比，是算法与业务之间的高效翻译器。</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">{ industry }</div>
+                    <h3 data-zh="行业经验" data-en="Industry Experience">行业经验</h3>
+                    <p data-zh="深耕智慧物流与 AI+ 家居两大赛道。在京东物流主导国家级智慧物流项目，在人工智能研究院推动 AIGC 家居产品商业化。横跨学术研究与产业落地，具备将前沿算法转化为规模化产品的完整经验。" data-en="Deep expertise in smart logistics and AI+home furnishing. Led national-level smart logistics projects at JD Logistics and drove AIGC home product commercialization at AI Research Institute. Spanning academic research and industrial deployment, with end-to-end experience transforming cutting-edge algorithms into scalable products.">深耕智慧物流与 AI+ 家居两大赛道。在京东物流主导国家级智慧物流项目，在人工智能研究院推动 AIGC 家居产品商业化。横跨学术研究与产业落地，具备将前沿算法转化为规模化产品的完整经验。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 个人经历区域 -->
+        <section id="experience" class="section">
+            <h2 class="section-title">
+                <span class="section-index">03.</span>
+                <span data-zh="个人经历" data-en="Experience">个人经历</span>
+            </h2>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date" data-zh="2024.08 - 2025.06" data-en="Aug 2024 - Jun 2025">2024.08 - 2025.06</span>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 data-zh="AI 产品经理" data-en="AI Product Manager">AI 产品经理</h3>
+                            <span class="company" data-zh="人工智能研究院" data-en="AI Research Institute">人工智能研究院</span>
+                        </div>
+                        <p class="timeline-description" data-zh="主导智能家居 AIGC 产品从概念验证到商业化落地的全流程。定义产品路线图，整合扩散模型算法实现户型图到定制化家居方案的自动生成。试点门店设计效率提升 40%，客户接受率提升 18%，订单转化率提升 15%。累计申请 10 项 AI 图像生成专利，联合实验室发表 2 篇 SCI 论文，构建产品技术壁垒。" data-en="Drove the full lifecycle of an AIGC home furnishing product from proof-of-concept to commercial launch. Defined the product roadmap and integrated diffusion model algorithms to auto-generate customized interior designs from floor plans. Achieved 40% design efficiency gain at pilot stores, 18% lift in customer acceptance, and 15% increase in order conversion. Filed 10 AI image-generation patents and co-published 2 SCI papers, building a defensible technical moat.">主导智能家居 AIGC 产品从概念验证到商业化落地的全流程。定义产品路线图，整合扩散模型算法实现户型图到定制化家居方案的自动生成。试点门店设计效率提升 40%，客户接受率提升 18%，订单转化率提升 15%。累计申请 10 项 AI 图像生成专利，联合实验室发表 2 篇 SCI 论文，构建产品技术壁垒。</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag" data-zh="扩散模型" data-en="Diffusion Models">扩散模型</span>
+                            <span class="tech-tag" data-zh="多模态融合" data-en="Multimodal Fusion">多模态融合</span>
+                            <span class="tech-tag" data-zh="语义分割" data-en="Semantic Segmentation">语义分割</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date" data-zh="2023.08 - 2024.04" data-en="Aug 2023 - Apr 2024">2023.08 - 2024.04</span>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 data-zh="访问研究员" data-en="Visiting Researcher">访问研究员</h3>
+                            <span class="company" data-zh="帝国理工学院" data-en="Imperial College London">帝国理工学院</span>
+                        </div>
+                        <p class="timeline-description" data-zh="主导多目标优化算法理论研究与工程应用，与 Prof. Yiannis Demiris 团队合作开发基于强化学习的动态资源分配算法，在复杂约束条件下实现帕累托最优解。研究成果发表于 ICML、NeurIPS 等顶级会议，提出的混合优化框架在工业调度场景中效率提升 23%，为后续 AI 产品化工作奠定坚实理论基础。" data-en="Led theoretical research and engineering applications of multi-objective optimization algorithms. Collaborated with Prof. Yiannis Demiris's team to develop RL-based dynamic resource allocation algorithms, achieving Pareto optimal solutions under complex constraints. Published at top-tier venues including ICML and NeurIPS. The proposed hybrid optimization framework improved industrial scheduling efficiency by 23%, laying a solid theoretical foundation for subsequent AI productization.">主导多目标优化算法理论研究与工程应用，与 Prof. Yiannis Demiris 团队合作开发基于强化学习的动态资源分配算法，在复杂约束条件下实现帕累托最优解。研究成果发表于 ICML、NeurIPS 等顶级会议，提出的混合优化框架在工业调度场景中效率提升 23%，为后续 AI 产品化工作奠定坚实理论基础。</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag" data-zh="多目标优化" data-en="Multi-objective Optimization">多目标优化</span>
+                            <span class="tech-tag" data-zh="强化学习" data-en="Reinforcement Learning">强化学习</span>
+                            <span class="tech-tag" data-zh="帕累托最优" data-en="Pareto Optimality">帕累托最优</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date" data-zh="2021.04 - 2023.04" data-en="Apr 2021 - Apr 2023">2021.04 - 2023.04</span>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 data-zh="AI 产品经理" data-en="AI Product Manager">AI 产品经理</h3>
+                            <span class="company" data-zh="京东物流 (JDL)" data-en="JD Logistics (JDL)">京东物流 (JDL)</span>
+                        </div>
+                        <p class="timeline-description" data-zh="主导国家级智慧物流产品解决方案设计与落地，深度参与发改委'北斗+'智慧物流、科技部应急物流智能决策平台等重点项目。构建算法项目价值评估体系，打造 AI 驱动型 CRM 产品，商家签约率提升 7.8%。设计智能终端配送决策引擎，配送效率提升 13.6%，显著提升京东物流技术产品化能力与行业影响力。" data-en="Led the design and deployment of national-level smart logistics product solutions. Deeply involved in NDRC's 'BeiDou+' smart logistics and MOST's emergency logistics intelligent decision platform. Built an algorithm project value assessment framework, launched an AI-driven CRM product that lifted merchant signing rate by 7.8%, and designed an intelligent last-mile delivery decision engine improving delivery efficiency by 13.6%.">主导国家级智慧物流产品解决方案设计与落地，深度参与发改委"北斗+"智慧物流、科技部应急物流智能决策平台等重点项目。构建算法项目价值评估体系，打造 AI 驱动型 CRM 产品，商家签约率提升 7.8%。设计智能终端配送决策引擎，配送效率提升 13.6%，显著提升京东物流技术产品化能力与行业影响力。</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag" data-zh="AB Test" data-en="AB Test">AB Test</span>
+                            <span class="tech-tag" data-zh="AI-CRM" data-en="AI-CRM">AI-CRM</span>
+                            <span class="tech-tag" data-zh="运筹优化" data-en="Operations Research">运筹优化</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date" data-zh="2019.09 - 2022.06" data-en="Sep 2019 - Jun 2022">2019.09 - 2022.06</span>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 data-zh="数学硕士" data-en="Master of Mathematics">数学硕士</h3>
+                            <span class="company" data-zh="北京科技大学" data-en="University of Science and Technology Beijing">北京科技大学</span>
+                        </div>
+                        <p class="timeline-description" data-zh="专注运筹学与最优化理论研究，GPA 3.9/4.0，获研究生国家奖学金。主导完成重点科研项目'复杂网络中的多目标优化算法设计'，提出改进的遗传算法框架，在大规模组合优化问题上性能提升 15%。深度参与企业合作项目，将理论算法应用于物流网络优化实际场景，为 3 家大型物流企业提供算法咨询服务。发表 SCI 论文 2 篇、EI 论文 3 篇，申请发明专利 1 项。" data-en="Focused on operations research and optimization theory. GPA 3.9/4.0, awarded National Graduate Scholarship. Led the key research project 'Multi-objective Optimization Algorithm Design in Complex Networks', proposing an improved genetic algorithm framework with 15% performance gain on large-scale combinatorial problems. Applied theoretical algorithms to real-world logistics network optimization for 3 major enterprises. Published 2 SCI and 3 EI papers, filed 1 invention patent.">专注运筹学与最优化理论研究，GPA 3.9/4.0，获研究生国家奖学金。主导完成重点科研项目"复杂网络中的多目标优化算法设计"，提出改进的遗传算法框架，在大规模组合优化问题上性能提升 15%。深度参与企业合作项目，将理论算法应用于物流网络优化实际场景，为 3 家大型物流企业提供算法咨询服务。发表 SCI 论文 2 篇、EI 论文 3 篇，申请发明专利 1 项。</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag" data-zh="运筹学" data-en="Operations Research">运筹学</span>
+                            <span class="tech-tag" data-zh="最优化理论" data-en="Optimization Theory">最优化理论</span>
+                            <span class="tech-tag" data-zh="组合优化" data-en="Combinatorial Optimization">组合优化</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date" data-zh="2014.09 - 2018.06" data-en="Sep 2014 - Jun 2018">2014.09 - 2018.06</span>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 data-zh="数学与应用数学学士" data-en="Bachelor of Mathematics and Applied Mathematics">数学与应用数学学士</h3>
+                            <span class="company" data-zh="北京科技大学" data-en="University of Science and Technology Beijing">北京科技大学</span>
+                        </div>
+                        <p class="timeline-description" data-zh="专业排名前 5%，GPA 3.8/4.0，系统掌握数学分析、线性代数、概率统计、数值分析等核心理论。主导完成国家级大学生创新创业项目'基于随机过程的金融风险建模'，获全国大学生数学建模竞赛国家一等奖。" data-en="Top 5% in major, GPA 3.8/4.0. Led a national-level undergraduate innovation project on 'Financial Risk Modeling Based on Stochastic Processes'. Won first prize in the National Mathematical Contest in Modeling (CUMCM).">专业排名前 5%，GPA 3.8/4.0，系统掌握数学分析、线性代数、概率统计、数值分析等核心理论。主导完成国家级大学生创新创业项目"基于随机过程的金融风险建模"，获全国大学生数学建模竞赛国家一等奖。</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag" data-zh="概率统计" data-en="Probability & Statistics">概率统计</span>
+                            <span class="tech-tag" data-zh="数值分析" data-en="Numerical Analysis">数值分析</span>
+                            <span class="tech-tag" data-zh="随机过程" data-en="Stochastic Processes">随机过程</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技能展示区域 -->
+        <section id="skills" class="section">
+            <h2 class="section-title">
+                <span class="section-index">04.</span>
+                <span data-zh="技术栈" data-en="Tech Stack">技术栈</span>
+            </h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><span class="comment-prefix">// </span><span data-zh="算法与 AI" data-en="Algorithm & AI">算法与 AI</span></h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag" style="--skill-level:90%" data-zh="多目标优化" data-en="Multi-obj Optimization">多目标优化</span>
+                        <span class="skill-tag" style="--skill-level:85%" data-zh="扩散模型" data-en="Diffusion Models">扩散模型</span>
+                        <span class="skill-tag" style="--skill-level:80%" data-zh="强化学习" data-en="Reinforcement Learning">强化学习</span>
+                        <span class="skill-tag" style="--skill-level:85%" data-zh="运筹优化" data-en="Operations Research">运筹优化</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><span class="comment-prefix">// </span><span data-zh="产品方法论" data-en="Product Methodology">产品方法论</span></h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag" style="--skill-level:90%" data-zh="产品路线图" data-en="Product Roadmap">产品路线图</span>
+                        <span class="skill-tag" style="--skill-level:90%" data-zh="AB 实验" data-en="A/B Testing">AB 实验</span>
+                        <span class="skill-tag" style="--skill-level:85%" data-zh="数据驱动决策" data-en="Data-Driven Decisions">数据驱动决策</span>
+                        <span class="skill-tag" style="--skill-level:80%" data-zh="用户增长" data-en="User Growth">用户增长</span>
+                        <span class="skill-tag" style="--skill-level:85%" data-zh="商业化落地" data-en="Commercialization">商业化落地</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><span class="comment-prefix">// </span><span data-zh="工具与语言" data-en="Tools & Languages">工具与语言</span></h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag" style="--skill-level:90%">Python</span>
+                        <span class="skill-tag" style="--skill-level:70%">SQL</span>
+                        <span class="skill-tag" style="--skill-level:75%">Matlab</span>
+                        <span class="skill-tag" style="--skill-level:80%">PyTorch</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 联系方式区域 -->
+        <section id="contact" class="section">
+            <h2 class="section-title">
+                <span class="section-index">05.</span>
+                <span data-zh="联系方式" data-en="Get In Touch">联系方式</span>
+            </h2>
+            <div class="contact-container">
+                <div class="contact-intro">
+                    <p data-zh="无论是 AI 产品合作、算法落地探讨，还是行业交流，欢迎随时联系。" data-en="Whether it's AI product collaboration, algorithm deployment discussions, or industry exchange, feel free to reach out.">无论是 AI 产品合作、算法落地探讨，还是行业交流，欢迎随时联系。</p>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:Guppy608@outlook.com" class="contact-link email">
+                        <span class="contact-icon">@</span>
+                        <span data-zh="邮箱" data-en="Email">邮箱</span>
+                    </a>
+                    <a href="https://github.com/Guppy608" class="contact-link github" target="_blank">
+                        <span class="contact-icon">&#60;/&#62;</span>
+                        <span data-zh="GitHub" data-en="GitHub">GitHub</span>
+                    </a>
+                    <a href="https://www.zhihu.com/people/Guppy0608/posts" class="contact-link zhihu" target="_blank">
+                        <span class="contact-icon">Zh</span>
+                        <span data-zh="知乎专栏" data-en="Zhihu Column">知乎专栏</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p data-zh="&copy; 2025 Guppy - AI 产品经理" data-en="&copy; 2025 Guppy - AI Product Manager">&copy; 2025 Guppy - AI 产品经理</p>
+            <div class="footer-links">
+                <span data-zh="北京科技大学" data-en="USTB">北京科技大学</span>
+                <span data-zh="帝国理工学院" data-en="Imperial College">帝国理工学院</span>
+                <span data-zh="京东物流" data-en="JD Logistics">京东物流</span>
+                <span data-zh="人工智能研究院" data-en="AI Research Institute">人工智能研究院</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
