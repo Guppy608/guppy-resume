@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
         langToggle.textContent = currentLang === 'zh' ? 'EN' : '中文';
         document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
 
-        const elementsWithLang = document.querySelectorAll('[data-zh][data-en]');
+        var elementsWithLang = document.querySelectorAll('[data-zh][data-en]');
         elementsWithLang.forEach(function(element) {
-            const text = currentLang === 'zh' ? element.getAttribute('data-zh') : element.getAttribute('data-en');
+            var text = currentLang === 'zh' ? element.getAttribute('data-zh') : element.getAttribute('data-en');
             if (element.tagName === 'INPUT') {
                 element.placeholder = text;
             } else {
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     langToggle.addEventListener('click', switchLanguage);
 
-    const savedLang = localStorage.getItem('language');
+    var savedLang = localStorage.getItem('language');
     if (savedLang && savedLang !== currentLang) {
         switchLanguage();
     }
@@ -67,9 +67,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== Theme Toggle =====
     function toggleTheme() {
         document.body.classList.toggle('dark-theme');
-        const isDark = document.body.classList.contains('dark-theme');
+        var isDark = document.body.classList.contains('dark-theme');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        const icon = themeToggle.querySelector('.theme-icon');
+        var icon = themeToggle.querySelector('.theme-icon');
         if (icon) icon.textContent = isDark ? '☀' : '☽';
     }
 
@@ -77,11 +77,11 @@ document.addEventListener('DOMContentLoaded', function() {
         themeToggle.addEventListener('click', toggleTheme);
     }
 
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-theme');
-        const icon = themeToggle && themeToggle.querySelector('.theme-icon');
-        if (icon) icon.textContent = '☀';
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.body.classList.remove('dark-theme');
+        var icon = themeToggle && themeToggle.querySelector('.theme-icon');
+        if (icon) icon.textContent = '☽';
     }
 
     // ===== Keyboard Shortcuts =====
@@ -96,57 +96,34 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ===== Smooth Scroll =====
-    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+    // ===== Page Dots Indicator =====
+    var pages = document.querySelectorAll('.snap-page');
+    var dots = document.querySelectorAll('.dot');
+
+    function updateDots() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var windowHeight = window.innerHeight;
+        var currentIndex = Math.round(scrollTop / windowHeight);
+        currentIndex = Math.max(0, Math.min(currentIndex, pages.length - 1));
+
+        dots.forEach(function(dot, i) {
+            dot.classList.toggle('active', i === currentIndex);
         });
-    });
+    }
 
-    // ===== Scroll Header Hide/Show =====
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const header = document.querySelector('header');
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            header.style.transform = 'translateY(0)';
-        }
-        lastScrollTop = scrollTop;
-    });
+    window.addEventListener('scroll', updateDots);
 
-    // ===== Intersection Observer with Staggered Delay =====
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
+    dots.forEach(function(dot) {
+        dot.addEventListener('click', function() {
+            var index = parseInt(this.getAttribute('data-index'));
+            pages[index].scrollIntoView({ behavior: 'smooth' });
         });
-    }, observerOptions);
-
-    const animatedEls = document.querySelectorAll('.about-card, .video-showcase, .timeline-item, .skill-category');
-    animatedEls.forEach(function(el, index) {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.5s ease ' + (index % 4) * 100 + 'ms, transform 0.5s ease ' + (index % 4) * 100 + 'ms';
-        observer.observe(el);
     });
 
     // ===== Video Lazy Load =====
-    const videoEl = document.querySelector('.video-wrapper video');
+    var videoEl = document.querySelector('.video-wrapper video');
     if (videoEl) {
-        const videoObserver = new IntersectionObserver(function(entries) {
+        var videoObserver = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                     videoEl.preload = 'auto';
