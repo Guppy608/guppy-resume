@@ -204,6 +204,10 @@ main {
     background: var(--bg-primary);
 }
 
+.exp-desc-mobile {
+    display: none;
+}
+
 .exp-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -217,16 +221,28 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1rem;
-    padding: 4rem 4rem 4rem 6rem;
+    gap: 0.8rem;
+    padding: 3rem 4rem 3rem 6rem;
+}
+
+.exp-text h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.exp-text p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.9rem;
 }
 
 .exp-date {
     font-family: var(--font-mono);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
     color: var(--accent-blue);
-    padding: 0.4rem 1rem;
+    padding: 0.3rem 0.8rem;
     border: 1px solid var(--border-color);
     border-radius: var(--radius-sm);
     background: var(--bg-card);
@@ -234,47 +250,15 @@ main {
     width: fit-content;
 }
 
-.exp-text h3 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--text-primary);
-}
-
 .exp-company {
     font-family: var(--font-mono);
     font-weight: 600;
     color: var(--accent-green);
-    font-size: 1.2rem;
-}
-
-.exp-text p {
-    color: var(--text-secondary);
-    line-height: 1.9;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 .tech-tags {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-top: 0.5rem;
-}
-
-.tech-tag {
-    background: transparent;
-    color: var(--text-primary);
-    padding: 0.25rem 0.75rem;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    font-family: var(--font-mono);
-    border: 1px solid var(--border-color);
-    transition: all var(--transition);
-}
-
-.tech-tag:hover {
-    border-color: var(--accent-blue);
-    color: var(--accent-blue);
+    display: none;
 }
 
 .exp-photo {
@@ -483,12 +467,25 @@ main {
         padding: 2rem 1.5rem;
     }
 
-    .exp-photo {
+    .exp-text h3 {
+        font-size: 1.4rem;
+    }
+
+    .exp-text p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .exp-desc-full {
         display: none;
     }
 
-    .exp-text h3 {
-        font-size: 1.4rem;
+    .exp-desc-mobile {
+        display: block;
+    }
+
+    .exp-photo {
+        display: none;
     }
 
     .contact-page .page-inner h2 {
