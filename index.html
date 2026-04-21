@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guppy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Floating Controls -->
+    <div class="floating-controls">
+        <button id="langToggle" class="lang-toggle">EN</button>
+    </div>
+
+    <!-- Page Dots Indicator -->
+    <div class="page-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+    </div>
+
+    <main>
+        <!-- Screen 1: Hero -->
+        <section class="snap-page hero-page">
+            <div class="hero-bg">
+                <img src="images/hero-bg.jpg" alt="Hero Background">
+            </div>
+            <div class="hero-overlay animate-on-scroll">
+                <h1 data-i18n="hero.name"></h1>
+                <h2 class="hero-title"><span class="typing-text"></span><span class="cursor">|</span></h2>
+                <p class="hero-subtitle" data-i18n="hero.subtitle"></p>
+            </div>
+        </section>
+
+        <!-- Screen 2: Speaking -->
+        <section class="snap-page speaking-page">
+            <div class="page-inner animate-on-scroll">
+                <h2 data-i18n="talk.section"></h2>
+                <div class="video-wrapper">
+                    <video controls playsinline preload="metadata">
+                        <source src="video/talk.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-caption">
+                    <h3 data-i18n="talk.title"></h3>
+                    <p data-i18n="talk.desc"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline: Experience -->
+        <section class="timeline-section">
+            <div class="timeline-header animate-on-scroll">
+                <h2 data-i18n="exp.section"></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+
+                <!-- Experience 1: card left, photo right -->
+                <div class="timeline-item left animate-on-scroll">
+                    <div class="timeline-card">
+                        <div class="timeline-card-body">
+                            <span class="exp-date" data-i18n="exp1.date"></span>
+                            <h3 data-i18n="exp1.title"></h3>
+                            <span class="exp-company" data-i18n="exp1.company"></span>
+                            <div class="exp-desc">
+                                <p class="exp-desc-summary" data-i18n="exp1.desc.summary"></p>
+                                <p class="exp-desc-full" data-i18n="exp1.desc.full"></p>
+                                <p class="exp-desc-mobile" data-i18n="exp1.desc.mobile"></p>
+                            </div>
+                            <button class="expand-btn" data-i18n="exp.expand"></button>
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-photo">
+                        <img src="images/exp-1.png" alt="AI 产品经理">
+                    </div>
+                </div>
+
+                <!-- Experience 2: photo left, card right -->
+                <div class="timeline-item right animate-on-scroll">
+                    <div class="timeline-photo">
+                        <img src="images/exp-2.jpg" alt="帝国理工学院">
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-body">
+                            <span class="exp-date" data-i18n="exp2.date"></span>
+                            <h3 data-i18n="exp2.title"></h3>
+                            <span class="exp-company" data-i18n="exp2.company"></span>
+                            <div class="exp-desc">
+                                <p class="exp-desc-summary" data-i18n="exp2.desc.summary"></p>
+                                <p class="exp-desc-full" data-i18n="exp2.desc.full"></p>
+                                <p class="exp-desc-mobile" data-i18n="exp2.desc.mobile"></p>
+                            </div>
+                            <button class="expand-btn" data-i18n="exp.expand"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 3: card left, photo right -->
+                <div class="timeline-item left animate-on-scroll">
+                    <div class="timeline-card">
+                        <div class="timeline-card-body">
+                            <span class="exp-date" data-i18n="exp3.date"></span>
+                            <h3 data-i18n="exp3.title"></h3>
+                            <span class="exp-company" data-i18n="exp3.company"></span>
+                            <div class="exp-desc">
+                                <p class="exp-desc-summary" data-i18n="exp3.desc.summary"></p>
+                                <p class="exp-desc-full" data-i18n="exp3.desc.full"></p>
+                                <p class="exp-desc-mobile" data-i18n="exp3.desc.mobile"></p>
+                            </div>
+                            <button class="expand-btn" data-i18n="exp.expand"></button>
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-photo">
+                        <img src="images/exp-3.jpg" alt="京东物流">
+                    </div>
+                </div>
+
+                <!-- Experience 4: photo left, card right -->
+                <div class="timeline-item right animate-on-scroll">
+                    <div class="timeline-photo">
+                        <img src="images/exp-4.jpg" alt="数学硕士">
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-body">
+                            <span class="exp-date" data-i18n="exp4.date"></span>
+                            <h3 data-i18n="exp4.title"></h3>
+                            <span class="exp-company" data-i18n="exp4.company"></span>
+                            <div class="exp-desc">
+                                <p class="exp-desc-summary" data-i18n="exp4.desc.summary"></p>
+                                <p class="exp-desc-full" data-i18n="exp4.desc.full"></p>
+                                <p class="exp-desc-mobile" data-i18n="exp4.desc.mobile"></p>
+                            </div>
+                            <button class="expand-btn" data-i18n="exp.expand"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 5: card left, photo right -->
+                <div class="timeline-item left animate-on-scroll">
+                    <div class="timeline-card">
+                        <div class="timeline-card-body">
+                            <span class="exp-date" data-i18n="exp5.date"></span>
+                            <h3 data-i18n="exp5.title"></h3>
+                            <span class="exp-company" data-i18n="exp5.company"></span>
+                            <div class="exp-desc">
+                                <p class="exp-desc-summary" data-i18n="exp5.desc.summary"></p>
+                                <p class="exp-desc-full" data-i18n="exp5.desc.full"></p>
+                                <p class="exp-desc-mobile" data-i18n="exp5.desc.mobile"></p>
+                            </div>
+                            <button class="expand-btn" data-i18n="exp.expand"></button>
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-photo">
+                        <img src="images/exp-5.jpg" alt="北京科技大学">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="snap-page contact-page">
+            <div class="page-inner animate-on-scroll">
+                <h2 data-i18n="contact.section"></h2>
+                <p class="contact-intro" data-i18n="contact.intro"></p>
+                <div class="contact-links">
+                    <a href="mailto:Guppy608@outlook.com" class="contact-link email">
+                        <span class="contact-icon">@</span>
+                        <span data-i18n="contact.email"></span>
+                    </a>
+                    <a href="https://github.com/Guppy608" class="contact-link github" target="_blank">
+                        <span class="contact-icon">&#60;/&#62;</span>
+                        <span data-i18n="contact.github"></span>
+                    </a>
+                    <a href="https://www.zhihu.com/people/Guppy0608/posts" class="contact-link zhihu" target="_blank">
+                        <span class="contact-icon">Zh</span>
+                        <span data-i18n="contact.zhihu"></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/content.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
