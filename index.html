@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guppy | AI Product & Research</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="site-shell">
+        <aside class="side-rail" aria-label="Site navigation">
+            <a href="#home" class="rail-mark">G</a>
+            <nav>
+                <a href="#profile" data-i18n="nav.profile"></a>
+                <a href="#work" data-i18n="nav.work"></a>
+                <a href="#life" data-i18n="nav.life"></a>
+                <a href="#contact" data-i18n="nav.contact"></a>
+            </nav>
+            <button id="langToggle" class="lang-toggle" type="button">EN</button>
+        </aside>
+
+        <main>
+            <section id="home" class="hero-section">
+                <div class="hero-copy animate-on-scroll">
+                    <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+                    <h1 data-i18n="hero.name"></h1>
+                    <p class="hero-role">
+                        <span class="typing-text"></span><span class="cursor">|</span>
+                    </p>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle"></p>
+                    <div class="hero-actions">
+                        <a href="#work" class="text-link" data-i18n="hero.cta.work"></a>
+                        <a href="#life" class="text-link muted" data-i18n="hero.cta.life"></a>
+                    </div>
+                </div>
+                <figure class="hero-portrait animate-on-scroll">
+                    <img src="images/hero-bg.jpg" alt="Guppy portrait">
+                    <figcaption data-i18n="hero.caption"></figcaption>
+                </figure>
+            </section>
+
+            <section id="profile" class="split-section">
+                <div class="section-heading animate-on-scroll">
+                    <p class="eyebrow" data-i18n="profile.kicker"></p>
+                    <h2 data-i18n="profile.title"></h2>
+                </div>
+                <div class="section-body animate-on-scroll">
+                    <p class="lead" data-i18n="profile.lead"></p>
+                    <div class="metric-grid">
+                        <article>
+                            <strong>1</strong>
+                            <span data-i18n="metric.product"></span>
+                        </article>
+                        <article>
+                            <strong>5</strong>
+                            <span data-i18n="metric.papers"></span>
+                        </article>
+                        <article>
+                            <strong>10</strong>
+                            <span data-i18n="metric.patents"></span>
+                        </article>
+                        <article>
+                            <strong>20</strong>
+                            <span data-i18n="metric.validation"></span>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="feature-strip">
+                <article class="feature-card animate-on-scroll">
+                    <span>01</span>
+                    <h3 data-i18n="feature1.title"></h3>
+                    <p data-i18n="feature1.desc"></p>
+                </article>
+                <article class="feature-card animate-on-scroll">
+                    <span>02</span>
+                    <h3 data-i18n="feature2.title"></h3>
+                    <p data-i18n="feature2.desc"></p>
+                </article>
+                <article class="feature-card animate-on-scroll">
+                    <span>03</span>
+                    <h3 data-i18n="feature3.title"></h3>
+                    <p data-i18n="feature3.desc"></p>
+                </article>
+            </section>
+
+            <section id="work" class="work-section">
+                <div class="section-heading animate-on-scroll">
+                    <p class="eyebrow" data-i18n="exp.kicker"></p>
+                    <h2 data-i18n="exp.section"></h2>
+                </div>
+
+                <article class="work-item animate-on-scroll">
+                    <figure>
+                        <img src="images/exp-1.png" alt="AI home design product">
+                    </figure>
+                    <div class="work-copy">
+                        <span class="date" data-i18n="exp1.date"></span>
+                        <h3 data-i18n="exp1.title"></h3>
+                        <p class="company" data-i18n="exp1.company"></p>
+                        <div class="exp-desc" data-i18n="exp1.desc.full"></div>
+                    </div>
+                </article>
+
+                <article class="work-item reverse animate-on-scroll">
+                    <figure>
+                        <img src="images/exp-2.jpg" alt="Imperial College London">
+                    </figure>
+                    <div class="work-copy">
+                        <span class="date" data-i18n="exp2.date"></span>
+                        <h3 data-i18n="exp2.title"></h3>
+                        <p class="company" data-i18n="exp2.company"></p>
+                        <div class="exp-desc" data-i18n="exp2.desc.full"></div>
+                    </div>
+                </article>
+
+                <article class="work-item animate-on-scroll">
+                    <figure>
+                        <img src="images/exp-3.jpg" alt="JD Logistics">
+                    </figure>
+                    <div class="work-copy">
+                        <span class="date" data-i18n="exp3.date"></span>
+                        <h3 data-i18n="exp3.title"></h3>
+                        <p class="company" data-i18n="exp3.company"></p>
+                        <div class="exp-desc" data-i18n="exp3.desc.full"></div>
+                    </div>
+                </article>
+
+                <div class="education-list">
+                    <article class="work-item education-item animate-on-scroll">
+                        <figure>
+                            <img src="images/exp-4.jpg" alt="USTB master's degree">
+                        </figure>
+                        <div class="work-copy">
+                            <span class="date" data-i18n="exp4.date"></span>
+                            <h3 data-i18n="exp4.title"></h3>
+                            <p class="company" data-i18n="exp4.company"></p>
+                            <div class="exp-desc" data-i18n="exp4.desc.full"></div>
+                        </div>
+                    </article>
+                    <article class="work-item education-item reverse animate-on-scroll">
+                        <figure>
+                            <img src="images/exp-5.jpg" alt="USTB bachelor's degree">
+                        </figure>
+                        <div class="work-copy">
+                            <span class="date" data-i18n="exp5.date"></span>
+                            <h3 data-i18n="exp5.title"></h3>
+                            <p class="company" data-i18n="exp5.company"></p>
+                            <div class="exp-desc" data-i18n="exp5.desc.full"></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="life" class="life-section">
+                <div class="section-heading animate-on-scroll">
+                    <p class="eyebrow" data-i18n="life.kicker"></p>
+                    <h2 data-i18n="life.title"></h2>
+                </div>
+                <div class="life-grid">
+                    <div class="map-panel animate-on-scroll" aria-label="Travel map">
+                        <svg viewBox="0 0 920 460" role="img" aria-labelledby="mapTitle">
+                            <title id="mapTitle">Travel map</title>
+                            <path d="M86 142l55-44 86-3 44 38 69 10 34 38-37 42 21 40-62 25-45-23-55 42-74-22-33-58-55-19 2-43z" />
+                            <path d="M272 296l55 36 22 62-31 55-48-26-26-74 28-53z" />
+                            <path d="M430 132l40-27 47 20 18 42-38 30-51-17-16-48z" />
+                            <path d="M494 210l66-8 40 43-19 82-50 57-48-38-13-78 24-58z" />
+                            <path d="M555 135l82-43 95 8 46 46 62 12 24 58-58 38-72-22-60 34-89-20-53 24-39-53 62-82z" />
+                            <path d="M714 327l71 16 43 49-51 31-72-24-15-43 24-29z" />
+                        </svg>
+                        <button class="map-pin china is-active" type="button" data-country="china">
+                            <span>CN</span>
+                        </button>
+                        <button class="map-pin uk" type="button" data-country="uk">
+                            <span>UK</span>
+                        </button>
+                    </div>
+                    <div class="travel-notes animate-on-scroll">
+                        <article class="travel-card is-active" data-travel-card="china">
+                            <span data-i18n="travel.china.meta"></span>
+                            <h3 data-i18n="travel.china.title"></h3>
+                            <p data-i18n="travel.china.desc"></p>
+                        </article>
+                        <article class="travel-card" data-travel-card="uk">
+                            <span data-i18n="travel.uk.meta"></span>
+                            <h3 data-i18n="travel.uk.title"></h3>
+                            <p data-i18n="travel.uk.desc"></p>
+                        </article>
+                        <article class="travel-card soft">
+                            <span data-i18n="travel.future.meta"></span>
+                            <h3 data-i18n="travel.future.title"></h3>
+                            <p data-i18n="travel.future.desc"></p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="contact-section">
+                <div class="section-heading animate-on-scroll">
+                    <p class="eyebrow" data-i18n="contact.kicker"></p>
+                    <h2 data-i18n="contact.section"></h2>
+                </div>
+                <div class="contact-body animate-on-scroll">
+                    <p data-i18n="contact.intro"></p>
+                    <div class="contact-links">
+                        <a href="mailto:Guppy608@outlook.com">
+                            <span>@</span>
+                            <span data-i18n="contact.email"></span>
+                        </a>
+                        <a href="https://github.com/Guppy608" target="_blank" rel="noreferrer">
+                            <span>&lt;/&gt;</span>
+                            <span data-i18n="contact.github"></span>
+                        </a>
+                        <a href="https://www.zhihu.com/people/Guppy0608/posts" target="_blank" rel="noreferrer">
+                            <span>Zh</span>
+                            <span data-i18n="contact.zhihu"></span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/content.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
