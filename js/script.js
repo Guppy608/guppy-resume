@@ -61,17 +61,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     renderLanguage(currentLang);
 
-    document.querySelectorAll('.map-pin').forEach(function(pin) {
-        pin.addEventListener('click', function() {
-            var country = this.getAttribute('data-country');
+    var travelPlaces = document.querySelectorAll('.travel-place');
+    var travelCards = document.querySelectorAll('[data-travel-card]');
 
-            document.querySelectorAll('.map-pin').forEach(function(item) {
-                item.classList.toggle('is-active', item === pin);
-            });
+    function selectCountry(country) {
+        travelPlaces.forEach(function(place) {
+            place.classList.toggle('is-active', place.getAttribute('data-country') === country);
+        });
 
-            document.querySelectorAll('[data-travel-card]').forEach(function(card) {
-                card.classList.toggle('is-active', card.getAttribute('data-travel-card') === country);
-            });
+        travelCards.forEach(function(card) {
+            card.classList.toggle('is-active', card.getAttribute('data-travel-card') === country);
+        });
+    }
+
+    travelPlaces.forEach(function(place) {
+        place.addEventListener('click', function() {
+            selectCountry(this.getAttribute('data-country'));
         });
     });
 

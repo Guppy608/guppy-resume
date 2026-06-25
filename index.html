@@ -25,7 +25,6 @@
         <main>
             <section id="home" class="hero-section">
                 <div class="hero-copy animate-on-scroll">
-                    <p class="eyebrow" data-i18n="hero.eyebrow"></p>
                     <h1 data-i18n="hero.name"></h1>
                     <p class="hero-role">
                         <span class="typing-text"></span><span class="cursor">|</span>
@@ -38,7 +37,6 @@
                 </div>
                 <figure class="hero-portrait animate-on-scroll">
                     <img src="images/hero-bg.jpg" alt="Guppy portrait">
-                    <figcaption data-i18n="hero.caption"></figcaption>
                 </figure>
             </section>
 
@@ -162,38 +160,107 @@
                     <h2 data-i18n="life.title"></h2>
                 </div>
                 <div class="life-grid">
-                    <div class="map-panel animate-on-scroll" aria-label="Travel map">
-                        <svg viewBox="0 0 920 460" role="img" aria-labelledby="mapTitle">
-                            <title id="mapTitle">Travel map</title>
-                            <path d="M86 142l55-44 86-3 44 38 69 10 34 38-37 42 21 40-62 25-45-23-55 42-74-22-33-58-55-19 2-43z" />
-                            <path d="M272 296l55 36 22 62-31 55-48-26-26-74 28-53z" />
-                            <path d="M430 132l40-27 47 20 18 42-38 30-51-17-16-48z" />
-                            <path d="M494 210l66-8 40 43-19 82-50 57-48-38-13-78 24-58z" />
-                            <path d="M555 135l82-43 95 8 46 46 62 12 24 58-58 38-72-22-60 34-89-20-53 24-39-53 62-82z" />
-                            <path d="M714 327l71 16 43 49-51 31-72-24-15-43 24-29z" />
-                        </svg>
-                        <button class="map-pin china is-active" type="button" data-country="china">
-                            <span>CN</span>
-                        </button>
-                        <button class="map-pin uk" type="button" data-country="uk">
-                            <span>UK</span>
-                        </button>
+                    <div class="travel-shelf animate-on-scroll" aria-label="Travel shelf">
+                        <article class="shelf-group">
+                            <span class="shelf-continent">欧洲 / Europe</span>
+                            <button class="travel-place is-active" type="button" data-country="spain">
+                                <strong>西班牙</strong>
+                                <span>Spain</span>
+                            </button>
+                            <button class="travel-place" type="button" data-country="portugal">
+                                <strong>葡萄牙</strong>
+                                <span>Portugal</span>
+                            </button>
+                        </article>
+                        <article class="shelf-group">
+                            <span class="shelf-continent">北美洲 / North America</span>
+                            <button class="travel-place" type="button" data-country="us">
+                                <strong>美国</strong>
+                                <span>United States</span>
+                            </button>
+                            <button class="travel-place" type="button" data-country="mexico">
+                                <strong>墨西哥</strong>
+                                <span>Mexico</span>
+                            </button>
+                        </article>
+                        <article class="shelf-group">
+                            <span class="shelf-continent">亚洲 / Asia</span>
+                            <button class="travel-place" type="button" data-country="singapore">
+                                <strong>新加坡</strong>
+                                <span>Singapore</span>
+                            </button>
+                            <button class="travel-place" type="button" data-country="hongkong">
+                                <strong>香港</strong>
+                                <span>Hong Kong</span>
+                            </button>
+                            <button class="travel-place" type="button" data-country="korea">
+                                <strong>韩国</strong>
+                                <span>South Korea</span>
+                            </button>
+                            <button class="travel-place" type="button" data-country="macau">
+                                <strong>澳门</strong>
+                                <span>Macau</span>
+                            </button>
+                            <button class="travel-place" type="button" data-country="malaysia">
+                                <strong>马来西亚</strong>
+                                <span>Malaysia</span>
+                            </button>
+                            <button class="travel-place" type="button" data-country="philippines">
+                                <strong>菲律宾</strong>
+                                <span>Philippines</span>
+                            </button>
+                        </article>
                     </div>
                     <div class="travel-notes animate-on-scroll">
-                        <article class="travel-card is-active" data-travel-card="china">
-                            <span data-i18n="travel.china.meta"></span>
-                            <h3 data-i18n="travel.china.title"></h3>
-                            <p data-i18n="travel.china.desc"></p>
+                        <article class="travel-card is-active" data-travel-card="spain">
+                            <span data-i18n="travel.spain.meta"></span>
+                            <h3 data-i18n="travel.spain.title"></h3>
+                            <p data-i18n="travel.spain.desc"></p>
                         </article>
-                        <article class="travel-card" data-travel-card="uk">
-                            <span data-i18n="travel.uk.meta"></span>
-                            <h3 data-i18n="travel.uk.title"></h3>
-                            <p data-i18n="travel.uk.desc"></p>
+                        <article class="travel-card" data-travel-card="portugal">
+                            <span data-i18n="travel.portugal.meta"></span>
+                            <h3 data-i18n="travel.portugal.title"></h3>
+                            <p data-i18n="travel.portugal.desc"></p>
                         </article>
-                        <article class="travel-card soft">
-                            <span data-i18n="travel.future.meta"></span>
-                            <h3 data-i18n="travel.future.title"></h3>
-                            <p data-i18n="travel.future.desc"></p>
+                        <article class="travel-card" data-travel-card="us">
+                            <span data-i18n="travel.us.meta"></span>
+                            <h3 data-i18n="travel.us.title"></h3>
+                            <p data-i18n="travel.us.desc"></p>
+                        </article>
+                        <article class="travel-card" data-travel-card="mexico">
+                            <span data-i18n="travel.mexico.meta"></span>
+                            <h3 data-i18n="travel.mexico.title"></h3>
+                            <p data-i18n="travel.mexico.desc"></p>
+                        </article>
+                        <article class="travel-card" data-travel-card="singapore">
+                            <span data-i18n="travel.singapore.meta"></span>
+                            <h3 data-i18n="travel.singapore.title"></h3>
+                            <p data-i18n="travel.singapore.desc"></p>
+                        </article>
+                        <article class="travel-card" data-travel-card="hongkong">
+                            <span data-i18n="travel.hongkong.meta"></span>
+                            <h3 data-i18n="travel.hongkong.title"></h3>
+                            <p data-i18n="travel.hongkong.desc"></p>
+                        </article>
+                        <article class="travel-card" data-travel-card="korea">
+                            <span data-i18n="travel.korea.meta"></span>
+                            <h3 data-i18n="travel.korea.title"></h3>
+                            <p data-i18n="travel.korea.desc"></p>
+                        </article>
+                        <article class="travel-card" data-travel-card="macau">
+                            <span data-i18n="travel.macau.meta"></span>
+                            <h3 data-i18n="travel.macau.title"></h3>
+                            <p data-i18n="travel.macau.desc"></p>
+                        </article>
+                        <article class="travel-card" data-travel-card="malaysia">
+                            <span data-i18n="travel.malaysia.meta"></span>
+                            <h3 data-i18n="travel.malaysia.title"></h3>
+                            <p data-i18n="travel.malaysia.desc"></p>
+                        </article>
+                        <article class="travel-card" data-travel-card="philippines">
+                            <span data-i18n="travel.philippines.meta"></span>
+                            <h3 data-i18n="travel.philippines.title"></h3>
+                            <p data-i18n="travel.philippines.desc"></p>
                         </article>
                     </div>
                 </div>

@@ -6,11 +6,9 @@ var CV_CONTENT = {
     "nav.contact": { zh: "联系", en: "Contact" },
 
     // Hero section
-    "hero.eyebrow": { zh: "运筹优化", en: "Optimization" },
     "hero.name": { zh: "陈泽光", en: "Guppy" },
-    "hero.subtitle": { zh: "我关注生成式 AI、智能决策与复杂系统优化，喜欢把一路走过的地方和故事留下来。", en: "I work across generative AI, intelligent decision-making, and complex system optimization, keeping a record of places and stories along the way." },
+    "hero.subtitle": { zh: "聚焦生成式 AI、智能决策与复杂系统优化，擅长把复杂问题拆开，也保留一路走过的地方和故事。", en: "Focused on generative AI, intelligent decision-making, and complex system optimization, with a habit of breaking down messy problems while keeping a record of places and stories along the way." },
     "hero.typing": { zh: "AI 产品经理", en: "AI Product Manager" },
-    "hero.caption": { zh: "从数学、物流、研究到 AI 产品，一条不太直但很有意思的路径。", en: "From mathematics and logistics to research and AI products, a non-linear but useful path." },
     "hero.cta.work": { zh: "工作履历", en: "View work" },
     "hero.cta.life": { zh: "旅行地图", en: "Life atlas" },
 
@@ -18,8 +16,8 @@ var CV_CONTENT = {
     "profile.kicker": { zh: "Profile", en: "Profile" },
     "profile.title": { zh: "把模型、业务和体验放在同一张桌上。", en: "Bringing models, business, and user experience to the same table." },
     "profile.lead": {
-        zh: "我的背景横跨数学建模、运筹优化、物流科技、强化学习与 AIGC 产品。相比单纯展示一份履历，我更希望这个网站像一条线索：你能看到我如何理解问题、组织复杂系统、推动产品落地，也能看到工作之外真实生活的一部分。",
-        en: "My background spans mathematical modeling, operations research, logistics technology, reinforcement learning, and AIGC products. Rather than presenting a flat resume, this site is meant to read like a trail: how I frame problems, organize complex systems, ship products, and keep a bit of real life in view."
+        zh: "背景横跨数学建模、运筹优化、物流科技、强化学习与 AIGC 产品。路径并不完全笔直，但每一段都强化了同一种工作方式：先问清楚问题，再把模型、业务和体验放到同一张桌上讨论。",
+        en: "A background spanning mathematical modeling, operations research, logistics technology, reinforcement learning, and AIGC products. The path has not been perfectly linear, but each chapter reinforced the same working method: ask clearer questions first, then bring models, business, and user experience to the same table."
     },
     "metric.product": { zh: "主导 AIGC 产品从零到一商业化", en: "Led 0-1 commercialization of an AIGC product" },
     "metric.patents": { zh: "AI 图像生成相关专利申请", en: "AI image generation patent applications" },
@@ -27,12 +25,12 @@ var CV_CONTENT = {
     "metric.validation": { zh: "算法产品效果验证与价值量化", en: "Algorithm product validations and impact studies" },
 
     // Feature strip
-    "feature1.title": { zh: "产品化视角", en: "Product Lens" },
-    "feature1.desc": { zh: "从用户访谈、价值定位、商业模式到上线验证，关注技术如何变成可持续的产品。", en: "From user interviews and positioning to business models and launch validation, I care about how technology becomes a sustainable product." },
-    "feature2.title": { zh: "算法与决策", en: "Algorithmic Decision-Making" },
-    "feature2.desc": { zh: "长期处理多目标优化、强化学习、调度规划与因果评估问题，习惯在约束里找结构。", en: "I have worked on multi-objective optimization, reinforcement learning, scheduling, planning, and causal evaluation, looking for structure inside constraints." },
-    "feature3.title": { zh: "跨场景落地", en: "Cross-Domain Delivery" },
-    "feature3.desc": { zh: "经历覆盖智能家居、智慧物流、制造调度、能源系统等场景，重视从理论到工程的闭环。", en: "My experience spans home design, smart logistics, manufacturing scheduling, and energy systems, with an emphasis on closing the loop from theory to deployment." },
+    "feature1.title": { zh: "把问题问清楚", en: "Ask Better Questions" },
+    "feature1.desc": { zh: "从用户、场景和商业假设开始，把“看起来很酷”的技术翻译成真正有人愿意用的产品。", en: "Start from users, scenarios, and business assumptions, then translate impressive technology into products people actually want to use." },
+    "feature2.title": { zh: "在约束里找路", en: "Find Paths in Constraints" },
+    "feature2.desc": { zh: "多目标优化、强化学习、调度规划和因果评估都不太浪漫，但它们很适合训练耐心、结构感和一点点 stubbornness。", en: "Multi-objective optimization, reinforcement learning, scheduling, and causal evaluation are not always romantic, but they are excellent training for patience, structure, and a little stubbornness." },
+    "feature3.title": { zh: "把方案带到现场", en: "Bring Ideas to the Field" },
+    "feature3.desc": { zh: "智能家居、物流、制造和能源场景反复证明：真正有意思的部分，通常发生在模型遇到真实世界之后。", en: "Home design, logistics, manufacturing, and energy systems repeatedly show that the interesting part usually begins after a model meets the real world." },
 
     // Tech Talk section
     "talk.section": { zh: "技术分享", en: "Tech Talk" },
@@ -46,14 +44,14 @@ var CV_CONTENT = {
     "exp1.desc.summary": { zh: "", en: "" },
     "exp1.desc.full": {
         zh: "\
-        主导并成功推动智能家居领域 AIGC 产品从零到一商业化落地，全面统筹产品战略、算法研发与工程实现。项目始于对家居设计行业痛点的深刻洞察，旨在通过生成式 AI 技术革新传统工作流程。领导团队构建业界领先的多模态数据基础设施与模型训练流水线，并创新性地将空间语义理解与控制网络相结合，攻克了 AI 生成设计在空间合理性与细节可控性上的关键难题，同时打造了一款支持实时交互与多维度编辑的智能设计平台，极大地提升了设计师的效率与客户的满意度。最终，通过设计创新的商业模式与推动头部企业深度合作，不仅验证了产品的市场价值，实现了显著的商业增长，还成功构建了坚实的技术壁垒。<br>    \
+        这段经历覆盖了从“行业里真的有这个痛点”到“产品真的有人愿意用”的完整 0→1。围绕智能家居设计场景，负责统筹产品定义、算法研发与工程落地，把空间理解、风格控制和实时交互串成一个可交付的平台。过程里既有设计师访谈、客户试点和计费模式，也有数据清洗、模型效果和推理性能这些更细碎但决定成败的部分。<br>    \
         <br>• 产品定义与市场洞察：通过超过 30 场资深设计师深度访谈及 500 余份用户问卷，精准定位“空间感知优先”的产品差异化战略，奠定了商业化成功的基础   \
         <br>• 数据体系与算法创新：整合超 10 万户型图、50 万家具模型及 200 万设计案例构建训练集；通过引入语义注意力机制与自研多条件控制模块，显著提升生成效果的空间合理性与风格一致性。   \
         <br>• 产品交付与体验提升：成功交付户型适配生成、高保真风格迁移及真实感增强三大模型；用户方案修改率从 50% 降至 28%，满意度从 75% 提升至 85%   \
         <br>• 性能优化与商业闭环：通过模型量化与推理优化，将 3D 场景生成耗时从 5 分钟压缩至 1 分钟内；设计的按量计费模式在试点门店助力设计效率提升 40%，方案接受率与订单转化率分别提升至 83% 和 35%   \
         <br>• 技术沉淀与行业影响：完成 10 项 AI 图像生成相关专利申请，并联合研究实验室发表 2 篇 SCI 论文，确立了在该领域的技术领导力与学术贡献。",
         en: "\
-        Led 0-1 commercialization of an AI home furnishing product, overseeing product, algorithm and engineering teams. Based on deep industry insights, built a multimodal data pipeline and pioneered spatial semantic control networks to overcome key challenges in AI design generation. Developed a real-time interactive platform that revolutionized design workflows and user experience. Drove strategic partnerships to validate market fit and establish technical leadership.<br>    \
+        Covered the full 0-1 journey for an AI home furnishing product, from validating a real workflow pain point to shipping a platform that designers could actually use. The role connected product definition, algorithm development, and engineering delivery, turning spatial understanding, style control, and real-time interaction into one usable experience. The work mixed customer pilots and pricing design with the less glamorous but crucial details of data quality, model behavior, and inference speed.<br>    \
         <br>• Product Strategy & Market Insight: Defined a differentiated 'space-aware' product strategy through 30+ in-depth designer interviews and 500+ user surveys, laying the groundwork for commercial success.  \
         <br>• Data Infrastructure & Algorithm Innovation: Built training sets by integrating over 100K floor plans, 500K furniture models, and 2M design cases; enhanced output spatial rationality and style consistency by innovating with semantic attention mechanisms and a proprietary multi-condition control module.    \
         <br>• Product Delivery & UX: Delivered three core models for layout adaptation, style transfer, and photorealism enhancement; the platform reduced user revision rates from 50% to 28% and increased satisfaction from 75% to 85%.\
@@ -83,13 +81,13 @@ var CV_CONTENT = {
     "exp2.desc.summary": { zh: "", en: "" },
     "exp2.desc.full": {
         zh: "\
-        在帝国理工学院担任访问研究员期间，与 Yiannis Demiris 教授团队深入合作，专注于复杂约束条件下的动态资源分配前沿研究。针对多目标优化问题的核心挑战，主导提出并开发了一套融合深度强化学习与进化算法的混合智能优化框架。通过设计创新的分层决策架构与自适应学习机制，有效攻克了高维空间搜索与动态权衡调优的难题，显著提升了算法的通用性与求解效率。研究成果成功应用于多个工业级复杂系统优化场景，实现了从理论创新到工程落地的完整闭环，为解决实际的调度与规划问题提供了全新的方法论与工具支撑。<br>  \
+        在帝国理工学院访问期间，与 Yiannis Demiris 教授团队共同研究复杂约束下的动态资源分配问题。相比单纯追求某个指标最优，研究重点放在算法如何于多个目标之间做出稳定、可解释、可迁移的权衡。围绕这一点，主导开发了融合深度强化学习与进化算法的混合优化框架，并在制造调度和能源系统等实际场景中完成验证。<br>  \
         <br>• 算法框架创新：提出融合深度强化学习与进化算法的混合框架，设计分层决策架构与 Transformer 特征编码器，实现历史优化经验的迁移学习    \
         <br>• 性能显著提升：在 ZDT、DTLZ 等标准测试集上，算法收敛速度提升 35%，解集多样性（Hypervolume 指标）提升 28%，优于 NSGA-III、MOEA/D 等基准    \
         <br>• 工业应用验证：在制造业生产调度项目中，实现生产线利用率提升 23%，交货延迟降低 31%，综合成本下降 18%。 \
         <br>• 跨领域解决方案：在能源系统优化项目中，助力峰值负荷削减 15%，可再生能源利用率提升 19%，验证了算法的广泛适用性    \
         <br>• 学术成果产出：以第一作者身份在 ICML、NeurIPS 等顶级会议/期刊发表论文 3 篇，累计发表 5 篇，论文总引用 120 余次，H-index 为 4。",
-        en: "As a visiting researcher at Imperial College, collaborated with Prof. Yiannis Demiris's team on cutting-edge research in dynamic resource allocation under complex constraints. Spearheaded the development of a novel hybrid intelligence framework that integrates deep reinforcement learning with evolutionary algorithms to tackle core challenges in multi-objective optimization. Designed an innovative hierarchical decision-making architecture and adaptive learning mechanisms, effectively addressing high-dimensional search and dynamic trade-off optimization, which enhanced the framework's generality and solving efficiency. The research was successfully applied to multiple industrial-scale optimization problems, completing the cycle from theoretical innovation to engineering deployment and providing new methodologies for real-world scheduling and planning.<br>   \
+        en: "As a visiting researcher at Imperial College, the work with Prof. Yiannis Demiris's team focused on dynamic resource allocation under complex constraints. Rather than chasing a single optimal score, the research examined how algorithms can make stable, explainable, and transferable trade-offs across multiple objectives. This led to a hybrid optimization framework combining deep reinforcement learning and evolutionary algorithms, validated in real-world scenarios including manufacturing scheduling and energy systems.<br>   \
         <br>• Algorithm Innovation: Proposed a hybrid PPO-evolutionary algorithm framework with hierarchical architecture and a Transformer-based encoder for transfer learning of optimization experience. \
         <br>• Performance Leap: Achieved a 35% faster convergence and a 28% improvement in solution diversity (Hypervolume) on ZDT/DTLZ benchmarks, outperforming NSGA-III and MOEA/D.  \
         <br>• Industrial Impact: In a manufacturing scheduling project, drove a 23% increase in production line utilization, a 31% reduction in delivery delays, and an 18% cost decrease.  \
@@ -113,17 +111,17 @@ var CV_CONTENT = {
 
     // Experience 3
     "exp3.date": { zh: "2022.07 - 2023.07", en: "Jul 2022 - Jul 2023" },
-    "exp3.title": { zh: "策略产品经理", en: "Strategy  Product Manager" },
+    "exp3.title": { zh: "策略产品经理", en: "Strategy Product Manager" },
     "exp3.company": { zh: "京东物流", en: "JD Logistics" },
     "exp3.desc.summary": { zh: "", en: "" },
     "exp3.desc.full": {
-        zh: "在京东物流科技部担任策略产品经理期间，深度参与并主导了多项国家级智慧物流战略项目的规划与实施。作为核心成员，致力于推动前沿人工智能技术与物流全场景的深度融合，负责从业务价值定义、算法选型论证到产品工程化落地的完整生命周期管理。通过构建体系化的算法价值评估与效果验证框架，确保了技术投入与商业回报的高度对齐。成功打造了以数据智能驱动的客户关系管理与终端配送决策两大核心产品矩阵，不仅显著提升了物流运营的自动化与智能化水平，也为公司构建了坚实的数字化决策能力与市场竞争壁垒。<br>    \
+        zh: "在京东物流科技部，核心工作是把“算法能做什么”翻译成“业务到底要不要用、怎么用、值不值”。围绕智慧物流、智能 CRM 和终端配送决策，参与国家级项目规划，并负责算法产品从业务价值定义、方案论证到上线验证的完整链路。物流场景很少有干净的实验室条件，因此更强调效果评估、因果验证和上线后的真实反馈。<br>    \
         <br>• 战略项目领导：主导发改委“智慧物流”示范工程及科技部应急物流智能决策平台等国家级项目，推动北斗定位与 AI 算法融合，构建覆盖全国的智能物流基础设施。   \
         <br>• 产品商业化：主导设计并上线 AI 驱动的智能 CRM 系统，整合客户画像、行为预测与智能推荐，使商家签约率提升 7.8%，销售线索转化率提升 12.3%，人均服务效率提升 35%。   \
         <br>• 智能决策引擎：设计终端配送智能决策引擎，融合运筹优化与深度强化学习，在 8 个核心城市试点实现配送效率提升 13.6%，成本降低 9.2%，客户满意度提升 8.5%。 \
         <br>• 科学评估体系：建立基于因果推断的 AB 测试体系，解决物流场景中的网络效应难题，主导完成 20 多个算法产品的严谨效果验证与价值量化。    \
         <br>• 完整产品闭环：构建从业务痛点识别、算法可行性评估、ROI 测算到上线后效果验证的完整算法产品管理体系，确保技术方案精准解决业务问题并产生可衡量的商业价值。",
-        en: "As an Strategy Product Manager at JD Logistics Technology, played a pivotal role in the planning and execution of several national-level smart logistics strategic initiatives. Focused on integrating cutting-edge AI technologies across the logistics value chain, overseeing the entire product lifecycle from business case definition and algorithm selection to engineering deployment. Established a systematic framework for evaluating algorithmic value and validating results, ensuring a strong alignment between technological investment and business outcomes. Successfully led the development of two core AI product pillars: a data-driven CRM system and an intelligent last-mile delivery decision engine, significantly enhancing operational automation and building a robust foundation for data-driven decision-making.<br>    \
+        en: "At JD Logistics Technology, the core work translated what algorithms could do into whether the business should use them, how they should be used, and whether the value was measurable. Across smart logistics initiatives, intelligent CRM, and last-mile delivery decision-making, the role covered the full product chain from business case definition and solution design to launch validation. Logistics rarely offers clean laboratory conditions, which made rigorous evaluation, causal validation, and real post-launch feedback especially important.<br>    \
         <br>• Strategic Project Leadership: Led national-level projects including the NDRC's 'Smart Logistics' demonstration, integrating positioning technology with AI to develop a nationwide intelligent logistics network.    \
         <br>• Product Launch: Spearheaded the design and launch of an AI-driven CRM system, integrating customer profiling and predictive analytics, which increased merchant signing rate by 7.8%, lead conversion by 12.3%, and agent productivity by 35%. \
         <br>• Decision Engine Design: Architected an intelligent delivery decision engine combining operations research and deep reinforcement learning (DQN). Piloted in 8 major cities, it boosted delivery efficiency by 13.6%, reduced costs by 9.2%, and improved customer satisfaction by 8.5%.   \
@@ -185,7 +183,7 @@ var CV_CONTENT = {
         <br>• 学术基础：专业排名前 5%，GPA 3.8/4.0，连续三年获得校级一等奖学金   \
         <br>• 科研项目：主导国家级大学生创新创业训练计划项目，构建基于 GARCH 模型与蒙特卡洛模拟的金融风险评估框架，项目成果获评校级优秀   \
         <br>• 竞赛成就：担任队长参加全国大学生数学建模竞赛，凭借综合运用运筹优化与统计方法解决城市轨道交通网络设计问题，荣获国家一等奖，论文获评全国优秀论文",
-        en: "During my Bachelor's degree in Mathematics and Applied Mathematics at the University of Science and Technology Beijing, I built a solid theoretical foundation and actively applied knowledge to solve complex, practical problems. I led a national-level innovation project in financial risk modeling and achieved top honors as a team captain in premier academic competitions.<br>    \
+        en: "The Bachelor's degree in Mathematics and Applied Mathematics at the University of Science and Technology Beijing built a solid theoretical foundation and emphasized applying knowledge to complex, practical problems. This period included a national-level innovation project in financial risk modeling and top honors as team captain in premier academic competitions.<br>    \
         <br>• Academic Foundation: Graduated in the top 5% of the program with a GPA of 3.8/4.0, awarded the First-Class Scholarship for three consecutive years.\
         <br>• Research Initiative: Led a National Undergraduate Innovation Project, developing a financial risk assessment framework using GARCH models and Monte Carlo simulation; the project was recognized as Excellent (top 10% university-wide).\
         <br>• Competition Excellence: As team captain, won the First Prize (award rate ~1%) in the National Mathematical Contest in Modeling by solving an urban rail transit network optimization problem, with the paper awarded National Excellent Paper."
@@ -207,16 +205,37 @@ var CV_CONTENT = {
 
     // Life section
     "life.kicker": { zh: "Life Atlas", en: "Life Atlas" },
-    "life.title": { zh: "履历之外，<br>也有生活。", en: "A place for life beyond the resume." },
-    "travel.china.meta": { zh: "中国 / 学习与工作", en: "China / Study and Work" },
-    "travel.china.title": { zh: "从数学训练到产品现场", en: "From mathematical training to product fieldwork" },
-    "travel.china.desc": { zh: "北京的校园和企业现场构成了我的底色：一边是建模、证明和算法竞赛，一边是物流、家居和真实用户。后续这里可以放城市、照片和具体故事。", en: "Beijing shaped much of my foundation: modeling, proofs, and competitions on one side; logistics, home design, and real users on the other. This space can later hold cities, photos, and specific stories." },
-    "travel.uk.meta": { zh: "英国 / 访问研究", en: "United Kingdom / Visiting Research" },
-    "travel.uk.title": { zh: "在伦敦把优化问题重新拆开", en: "Rethinking optimization problems in London" },
-    "travel.uk.desc": { zh: "帝国理工的访问经历让我把强化学习、进化算法和工业系统放在同一个框架里思考。之后可以补充伦敦生活、研究日常和路上的小插曲。", en: "My visit to Imperial College helped me rethink reinforcement learning, evolutionary algorithms, and industrial systems in one framework. Later, this can include London life, research routines, and small travel notes." },
-    "travel.future.meta": { zh: "待补充 / 下一站", en: "To be added / Next stops" },
-    "travel.future.title": { zh: "国家、照片、趣事都可以继续加", en: "Countries, photos, and anecdotes can keep growing" },
-    "travel.future.desc": { zh: "这个模块先做成静态地图和故事卡片。你给我国家列表、城市、年份、照片或一句趣事后，就能扩展成真正的生活地图。", en: "This module starts as a static map with story cards. Once you provide countries, cities, years, photos, or short anecdotes, it can grow into a fuller life atlas." },
+    "life.title": { zh: "履历之外，<br>也有脚步。", en: "Places, detours, and small stories." },
+    "travel.us.meta": { zh: "美国 / 公路感与大份量", en: "United States / Big Roads, Bigger Portions" },
+    "travel.us.title": { zh: "把距离感重新校准", en: "Recalibrating Distance" },
+    "travel.us.desc": { zh: "曾在凯鲁亚克《在路上》里读到一种近乎失重的美国：路很长，人一直在移动，城市像中途停靠的灯。真正到了美国，纽约的街角、洛杉矶的车流、旧金山的坡路和一路展开的高速公路，把这种“距离感”变得很具体。<br><br>美国的尺度常常大得有点不讲道理：超市货架很长，咖啡杯很大，停车场像一小片平原。最有记忆点的并不总是景点，而是路边招牌、加油站、早餐店、酒店电梯里短短的寒暄，以及突然变宽的天空。<br><br>这段经历留下的不是一张标准旅行清单，而是一组很日常的画面：纽约的行人速度，西海岸傍晚的光，公路边的汉堡店，还有每次导航显示“还要开很久”时那种又无奈又好笑的心情。", en: "Kerouac's On the Road once offered a version of America that felt almost weightless: long roads, constant movement, cities appearing like lit-up stops along the way. In the United States, that sense of distance became concrete through New York street corners, Los Angeles traffic, San Francisco hills, and highways that kept unfolding ahead.<br><br>The scale can feel almost unreasonable: supermarket aisles, coffee cups, parking lots, and portions all seem a little larger than expected. The strongest memories are not always landmarks, but roadside signs, gas stations, breakfast places, brief elevator greetings, and skies that suddenly open wide.<br><br>What remains is less a standard travel checklist than a set of everyday frames: the pace of pedestrians in New York, late light on the West Coast, a burger place near the road, and the half-amused feeling of seeing the navigation say there is still a long way to go." },
+    "travel.mexico.meta": { zh: "墨西哥 / 颜色、街声和玉米香", en: "Mexico / Color, Street Noise, and Corn" },
+    "travel.mexico.title": { zh: "热闹得很有层次", en: "A Layered Kind of Liveliness" },
+    "travel.mexico.desc": { zh: "曾在奥克塔维奥·帕斯《孤独的迷宫》里读到墨西哥人的节庆、面具和复杂的民族性；到了墨西哥城，反而先被更直接的东西击中：墙面的颜色、街边的玉米香、音乐声，以及突然热闹起来的广场。<br><br>墨西哥城的历史中心、科约阿坎一带的街巷、市场里的辣味和酸味，都很适合慢慢走。它不是安静铺开的地方，而是声音、颜色和温度同时扑过来；一个转角可能出现亮得很任性的墙面，一家小店可能端出意外好吃的一餐。<br><br>帕斯写的是一个国家复杂的内心，实际走在街上时，复杂感会落到很具体的细节里：教堂外的人群、摊位边的笑声、玉米饼上的青柠，以及空气里那种不需要解释的热闹。", en: "Octavio Paz's The Labyrinth of Solitude writes about Mexico through festivals, masks, and a complex national temperament. In Mexico City, the first impressions were more immediate: wall colors, the smell of corn from the street, music, and plazas that seemed to become lively all at once.<br><br>The historic center, the streets around Coyoacan, market flavors of spice and acidity, all reward a slow pace. Mexico does not unfold quietly; sound, color, and warmth arrive together. A corner can reveal a fiercely bright wall, and a small place can serve an unexpectedly good meal.<br><br>Paz writes about the inner complexity of a country. On the street, that complexity becomes tangible: people outside churches, laughter by food stalls, lime over tortillas, and a liveliness that does not need much explanation." },
+    "travel.korea.meta": { zh: "韩国 / 咖啡店密度很高", en: "South Korea / A High Density of Cafes" },
+    "travel.korea.title": { zh: "适合暴走，也适合坐下", en: "Good for Walking, Good for Sitting" },
+    "travel.korea.desc": { zh: "曾在申京淑《请照顾好我妈妈》里读到首尔站与家庭记忆交叠的段落，城市不只是背景，更像许多人生活的交叉口。到了首尔，弘大、圣水洞、景福宫和汉江边的夜风，把这种交叉感变得轻快许多。<br><br>韩国很适合城市漫步：白天可以从宫殿、街区、地铁站一路走到腿酸，晚上又总能找到一家灯光刚好的咖啡店或小馆子，把一天收住。招牌、店面、甜点柜、地铁出口附近的小路，都有一种认真经营过的秩序。<br><br>有意思的是，热闹和安静常常只隔一条路。前一刻还在商圈里被人流推着走，后一刻就能坐在咖啡店里看窗外发呆。首尔的舒服之处，正在于这种可快可慢的弹性。", en: "Shin Kyung-sook's Please Look After Mom leaves an image of Seoul Station where family memory and urban movement overlap; the city is not just a backdrop, but a crossing point of many lives. In Seoul, Hongdae, Seongsu-dong, Gyeongbokgung, and the evening wind by the Han River made that crossing feel lighter and more everyday.<br><br>South Korea is excellent for city walking: palaces, neighborhoods, subway exits, and side streets can fill a day until your legs complain, and a well-lit cafe or small restaurant can quietly close it. Signs, storefronts, dessert counters, and alleys near stations all feel carefully arranged.<br><br>What is interesting is how close loud and quiet can be. One moment the crowd carries you through a commercial district; the next, a cafe window gives the day back to you. Seoul's comfort lies in that ability to move fast and slow in the same afternoon." },
+    "travel.singapore.meta": { zh: "新加坡 / 干净、潮湿、好吃", en: "Singapore / Clean, Humid, Delicious" },
+    "travel.singapore.title": { zh: "小地图里的多重口味", en: "Many Flavors on a Small Map" },
+    "travel.singapore.desc": { zh: "曾在保罗·索鲁《圣杰克》里读到一个潮湿、混杂、带着旧日港口气的新加坡。真正走到滨海湾、牛车水、小印度和熟食中心时，看到的则是另一种更整洁、更高效，但仍然很有生活气味的城市。<br><br>新加坡像一张压缩得很好的地图：地铁、树荫、雨、商场和小贩中心彼此挨得很近。下雨时躲进室内，雨停后又走回潮湿空气里；从一碗热汤到一杯冰饮，中间可能只隔了几分钟。<br><br>它小，但一点也不单薄。最有趣的部分，是秩序并没有完全吞掉烟火气：可以很顺地移动，也可以很认真地纠结今天到底吃哪一家。高效和好吃同时存在，这件事本身就很新加坡。", en: "Paul Theroux's Saint Jack presents a humid, mixed, old-port version of Singapore. Walking through Marina Bay, Chinatown, Little India, and hawker centers reveals another version: cleaner, more efficient, yet still full of everyday flavor.<br><br>Singapore feels like a well-compressed map: metro lines, shade, rain, malls, and hawker centers all sit close together. You duck indoors when it rains, step back into humid air when it stops, and the distance between a hot bowl of food and an iced drink can be just a few minutes.<br><br>It is small, but never thin. The interesting part is that order has not erased daily warmth. You can move smoothly, then spend a very serious amount of time deciding what to eat. Efficient and delicious at the same time: that feels very Singapore." },
+    "travel.malaysia.meta": { zh: "马来西亚 / 热带、夜市和慢节奏", en: "Malaysia / Tropics, Night Markets, and Ease" },
+    "travel.malaysia.title": { zh: "把胃口交给街边", en: "Let the Street Decide Dinner" },
+    "travel.malaysia.desc": { zh: "曾在毛姆的马来亚故事里读到热带殖民地的闷热、沉默和人情暗流；到了吉隆坡、槟城乔治市和马六甲，文学里的湿热感仍在，但街头更松弛，也更好吃。<br><br>马来西亚适合不赶路。热带空气、夜市摊位、甜饮、香料味和突然落下的雨，会把一天安排得很自然。很多快乐并不昂贵，只是刚好在路边，刚好闻起来很香。<br><br>它的好玩之处在于混合感很自然。语言、食物、建筑和天气直接挤在一起，不需要刻意摆出“多元”的姿态。乔治市的壁画、马六甲的老街、吉隆坡夜里的灯，都像是同一本旅行笔记里不同颜色的页边注。", en: "Somerset Maugham's Malayan stories carry a sense of tropical heat, silence, and hidden human undercurrents. In Kuala Lumpur, George Town in Penang, and Melaka, that humid atmosphere remains, but the street is looser, warmer, and much better for eating.<br><br>Malaysia is a place for not rushing. Tropical air, night-market stalls, sweet drinks, spice, and sudden rain arrange the day naturally. Many pleasures are not expensive; they are simply on the street and smell very good.<br><br>What makes it fun is how naturally mixed everything feels. Languages, food, buildings, and weather sit together without performing diversity. George Town murals, Melaka old streets, and night lights in Kuala Lumpur feel like different margin notes in the same travel notebook." },
+    "travel.portugal.meta": { zh: "葡萄牙 / 风、坡和海边光线", en: "Portugal / Wind, Hills, and Atlantic Light" },
+    "travel.portugal.title": { zh: "慢一点比较好", en: "Better at a Slower Pace" },
+    "travel.portugal.desc": { zh: "曾在佩索阿《惶然录》里读到里斯本街道上的迟疑、孤独和低声的自我对话。真正走到里斯本的阿尔法玛、贝伦和波尔图的河边时，那种缓慢的内省感仍在，只是被海风、坡路和瓷砖变得更明亮。<br><br>葡萄牙适合放慢速度。坡路、石阶、蓝白瓷砖、海边光线和傍晚的风，会让人自然降低语速，也降低行程密度。它不是催着多打几个卡的地方，而是会让人承认：今天少走一点也挺好。<br><br>走累了以后坐下来，看光线慢慢变软，反而比继续赶路更像旅行。它的浪漫并不夸张，而是很“刚好”：一阵风、一段坡、一杯饮料、一个可以坐很久的位置。", en: "Pessoa's The Book of Disquiet carries Lisbon as hesitation, solitude, and quiet self-conversation. In Alfama, Belem, and along the river in Porto, that slow inward mood remains, but sea wind, hills, and tiles make it brighter.<br><br>Portugal invites a slower pace. Hills, stone steps, blue-and-white tiles, Atlantic light, and evening wind naturally lower both your voice and your itinerary density. It is not a place that pushes you to check off more stops; it makes doing less feel exactly right.<br><br>Sitting down after walking too much and watching the light soften can feel more like travel than rushing onward. Its romance is not loud. It is just-right: a bit of wind, a slope, a drink, and a place where you can sit for a long time." },
+    "travel.spain.meta": { zh: "西班牙 / 日照很长的一站", en: "Spain / A Stop with Long Sunlight" },
+    "travel.spain.title": { zh: "白天被拉得很长", en: "When the Day Stretches Out" },
+    "travel.spain.desc": { zh: "曾在海明威《太阳照常升起》里读到西班牙的节日、酒馆、午后和奔跑的人群；到了马德里、巴塞罗那和塞维利亚，书里的热烈感变得更日常：广场上的阳光、很晚才开始的晚饭、街边说话声和慢下来的傍晚。<br><br>西班牙的时间感很特别。白天像被阳光拉长，夜晚也不急着收场。很多时候，真正有意思的不是“今天完成了什么”，而是在哪个广场多坐了一会儿，在哪条小街突然遇到一顿舒服的饭。<br><br>它有一种很会生活的气质。少安排一点，反而更容易遇到好玩的片段：巴塞罗那街角的光、马德里的博物馆和酒馆、南部城市热得发亮的墙面。旅行不只是去看什么，也是在一个陌生地方借用另一种时间表。", en: "Hemingway's The Sun Also Rises leaves Spain full of festivals, bars, afternoons, and rushing crowds. In Madrid, Barcelona, and Seville, that intensity becomes more everyday: sunlight on plazas, dinners that start late, street voices, and evenings that slow down rather than end.<br><br>Spain has a distinct sense of time. Daylight seems stretched, and night does not hurry to close. Often, the interesting question is not what was completed today, but which plaza held you a little longer, or which side street produced an unexpectedly comfortable meal.<br><br>There is a strong talent for living here. Planning less can make it easier to meet the good parts: light on a Barcelona corner, museums and bars in Madrid, bright hot walls in southern cities. Travel becomes less about seeing things and more about borrowing another timetable for a while." },
+    "travel.philippines.meta": { zh: "菲律宾 / 海岛和松弛感", en: "Philippines / Islands and Ease" },
+    "travel.philippines.title": { zh: "离海近一点", en: "A Little Closer to the Sea" },
+    "travel.philippines.desc": { zh: "曾在黎萨尔《Noli Me Tangere》中读到马尼拉与殖民时代的阴影，城市和海岛都带着复杂的历史回声。实际到马尼拉、宿务和海边小岛时，最先留下来的却是身体感受：风、船、日晒、湿热空气和慢下来的午后。<br><br>菲律宾最吸引人的不是打卡清单，而是靠近海之后自然出现的松弛感。很多事会被自动放进“晚点再说”的文件夹里，注意力从计划表转移到海面、路边小店和一顿简单但舒服的饭。<br><br>它的记忆很轻：晒过太阳的皮肤、拖鞋踩过的路、码头边的等候、冰饮杯壁上的水珠。黎萨尔写下的是历史的重量，而海边的日常又把人拉回很具体、很松弛的一天。", en: "Rizal's Noli Me Tangere carries Manila and colonial history with a heavy echo. In Manila, Cebu, and island stretches by the sea, the first memories are more bodily: wind, boats, sun, humid air, and afternoons that slow themselves down.<br><br>The Philippines is less about a checklist and more about the ease that appears near the sea. Many matters naturally move into the folder of 'later'. Attention shifts from the plan to the water, roadside shops, and a simple but comfortable meal.<br><br>The memories are light: sun-warmed skin, roads walked in slippers, waiting near a pier, condensation on an iced drink. Rizal writes the weight of history; the seaside everyday pulls the day back toward something specific and loose." },
+    "travel.hongkong.meta": { zh: "香港 / 山海之间的密度", en: "Hong Kong / Density Between Hills and Sea" },
+    "travel.hongkong.title": { zh: "一边很快，一边很近", en: "Fast, Yet Close to Water" },
+    "travel.hongkong.desc": { zh: "曾在刘以鬯《对倒》里读到香港街头的并置感：两个人、两种记忆、同一座密集城市里的擦肩而过。走到中环、上环、旺角、维港和半山扶梯时，这种并置变得很真实：楼很高，街很窄，坡很多，转身又可能看到海。<br><br>香港很会在有限空间里塞进很多层生活。电梯、天桥、坡道、叮叮车和海风把不同层次叠在一起，几步路就能从日常街市走到很电影感的画面。它不需要刻意营造氛围，因为氛围本来就在街上。<br><br>最有趣的是它同时很快也很近：节奏快，海很近；楼很密，山也很近。人在里面走，会一直被城市推着前进，但总能在茶餐厅、码头边或某个上坡路口稍微停一下。", en: "Liu Yichang's Tete-beche captures Hong Kong through juxtaposition: two people, two sets of memories, brushing past each other in the same dense city. In Central, Sheung Wan, Mong Kok, Victoria Harbour, and the Mid-Levels escalator, that juxtaposition becomes physical: tall buildings, narrow streets, many slopes, and then suddenly the sea.<br><br>Hong Kong is very good at fitting layers of life into limited space. Elevators, footbridges, slopes, trams, and sea wind stack different levels together, and a few steps can take you from an ordinary market street to something cinematic. It does not need to manufacture atmosphere; the atmosphere is already on the street.<br><br>What makes it fun is that Hong Kong is both fast and close: fast rhythm, close water; dense buildings, nearby hills. As the city pushes you forward, a cha chaan teng, a pier, or a sloping corner can still give you a place to pause." },
+    "travel.macau.meta": { zh: "澳门 / 小城、石板路和甜点", en: "Macau / Small Streets, Stone Paths, and Sweets" },
+    "travel.macau.title": { zh: "小尺度里的混合感", en: "A Small-Scale Mix" },
+    "travel.macau.desc": { zh: "曾翻到《澳门记略》里关于城池、街市和海防的旧式记录，澳门在文字里像一座小小的交汇点。实际走到大三巴、议事亭前地、氹仔和路环，历史感没有消失，只是被游客声、蛋挞香气和石板路变得更日常。<br><br>澳门的有趣在于尺度很小，却混合了很多层东西。前一段还很热闹，下一段可能就只剩旧墙、窄街和缓慢的脚步声。它不像一个需要急着走完的地方，更像适合绕几圈的小城。<br><br>它的好玩不是靠大，而是靠密度和反差。地方不大，但足够让人反复确认路线、临时改变方向、顺便给自己找一个吃蛋挞的理由。甜味、旧墙和窄街，会留下很具体的片段。", en: "Old records such as Aomen Jilue describe Macau through city walls, markets, and coastal defense, making it read like a small point of exchange. Around the Ruins of Saint Paul's, Senado Square, Taipa, and Coloane, that historical feeling remains, but tourist voices, egg tart sweetness, and stone paths make it more everyday.<br><br>Macau is interesting because it is small but layered. One stretch can be crowded, and the next may hold only old walls, narrow streets, and slow footsteps. It is less a place to rush through than a small city to circle a few times.<br><br>Its charm is not size, but density and contrast. The place is small, yet big enough to make you check the route again, change direction on a whim, and find a very reasonable excuse for another egg tart. Sweetness, old walls, and narrow streets leave very specific fragments behind." },
 
     // Contact section
     "contact.kicker": { zh: "Contact", en: "Contact" },
