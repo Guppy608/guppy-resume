@@ -3,294 +3,326 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guppy | AI Product & Research</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="陈泽光（Guppy）的个人主页：AI 产品、优化研究与旅行观察。">
+    <meta name="theme-color" content="#111926">
+    <title>陈泽光 Guppy — AI Product · Research · Life</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="site-shell">
-        <aside class="side-rail" aria-label="Site navigation">
-            <a href="#home" class="rail-mark">G</a>
-            <nav>
-                <a href="#profile" data-i18n="nav.profile"></a>
-                <a href="#work" data-i18n="nav.work"></a>
-                <a href="#life" data-i18n="nav.life"></a>
-                <a href="#contact" data-i18n="nav.contact"></a>
-            </nav>
-            <button id="langToggle" class="lang-toggle" type="button">EN</button>
-        </aside>
+    <a class="skip-link" href="#profile">跳到主要内容</a>
 
-        <main>
-            <section id="home" class="hero-section">
-                <div class="hero-copy animate-on-scroll">
-                    <h1 data-i18n="hero.name"></h1>
-                    <p class="hero-role">
-                        <span class="typing-text"></span><span class="cursor">|</span>
-                    </p>
+    <header class="site-header">
+        <a class="brand" href="#home" aria-label="返回首页">
+            <span class="brand-name">GUPPY / 陈泽光</span>
+        </a>
+        <nav class="site-nav" aria-label="主要导航">
+            <a href="#profile" data-section-link="profile" data-i18n="nav.profile"></a>
+            <a href="#education" data-section-link="education" data-i18n="nav.education"></a>
+            <a href="#work" data-section-link="work" data-i18n="nav.work"></a>
+            <a href="#life" data-section-link="life" data-i18n="nav.life"></a>
+            <a href="#contact" data-section-link="contact" data-i18n="nav.contact"></a>
+        </nav>
+        <button id="langToggle" class="lang-toggle" type="button" aria-label="Switch language">EN</button>
+    </header>
+
+    <div class="section-progress" aria-hidden="true"><span></span></div>
+
+    <main>
+        <section id="home" class="panel hero-panel" data-panel="home">
+            <canvas id="heroCanvas" aria-hidden="true"></canvas>
+            <div class="hero-photo" aria-hidden="true">
+                <picture>
+                    <source media="(max-width: 800px)" srcset="images/mobile/hero.webp">
+                    <img src="images/desktop/hero.webp" alt="">
+                </picture>
+            </div>
+            <div class="hero-shade" aria-hidden="true"></div>
+            <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+            <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+
+            <div class="panel-inner hero-layout">
+                <div class="hero-copy reveal">
+                    <h1>
+                        <span class="hero-cn" data-i18n="hero.name"></span>
+                        <span class="hero-en">GUPPY</span>
+                    </h1>
+                    <div class="role-switch" aria-live="polite">
+                        <span class="role-label">I AM</span>
+                        <span class="typing-text"></span><span class="typing-cursor">_</span>
+                    </div>
                     <p class="hero-subtitle" data-i18n="hero.subtitle"></p>
                     <div class="hero-actions">
-                        <a href="#work" class="text-link" data-i18n="hero.cta.work"></a>
-                        <a href="#life" class="text-link muted" data-i18n="hero.cta.life"></a>
+                        <a href="#profile" class="pill-link ghost" data-i18n="hero.cta.story"></a>
+                        <a href="mailto:Guppy608@outlook.com" class="pill-link ghost" data-i18n="hero.cta.contact"></a>
                     </div>
                 </div>
-                <figure class="hero-portrait animate-on-scroll">
-                    <img src="images/hero-bg.jpg" alt="Guppy portrait">
-                </figure>
-            </section>
 
-            <section id="profile" class="split-section">
-                <div class="section-heading animate-on-scroll">
-                    <p class="eyebrow" data-i18n="profile.kicker"></p>
+                <div class="hero-foot reveal">
+                    <p class="scroll-cue"><span></span><span data-i18n="hero.scroll"></span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="profile" class="panel profile-panel" data-panel="profile">
+            <div class="panel-inner">
+                <div class="panel-heading reveal">
+                    <p class="section-kicker" data-i18n="profile.kicker"></p>
                     <h2 data-i18n="profile.title"></h2>
                 </div>
-                <div class="section-body animate-on-scroll">
-                    <p class="lead" data-i18n="profile.lead"></p>
-                    <div class="metric-grid">
-                        <article>
-                            <strong>1</strong>
-                            <span data-i18n="metric.product"></span>
-                        </article>
-                        <article>
-                            <strong>5</strong>
-                            <span data-i18n="metric.papers"></span>
-                        </article>
-                        <article>
-                            <strong>10</strong>
-                            <span data-i18n="metric.patents"></span>
-                        </article>
-                        <article>
-                            <strong>20</strong>
-                            <span data-i18n="metric.validation"></span>
-                        </article>
-                    </div>
-                </div>
-            </section>
 
-            <section class="feature-strip">
-                <article class="feature-card animate-on-scroll">
-                    <span>01</span>
-                    <h3 data-i18n="feature1.title"></h3>
-                    <p data-i18n="feature1.desc"></p>
-                </article>
-                <article class="feature-card animate-on-scroll">
-                    <span>02</span>
-                    <h3 data-i18n="feature2.title"></h3>
-                    <p data-i18n="feature2.desc"></p>
-                </article>
-                <article class="feature-card animate-on-scroll">
-                    <span>03</span>
-                    <h3 data-i18n="feature3.title"></h3>
-                    <p data-i18n="feature3.desc"></p>
-                </article>
-            </section>
-
-            <section id="work" class="work-section">
-                <div class="section-heading animate-on-scroll">
-                    <p class="eyebrow" data-i18n="exp.kicker"></p>
-                    <h2 data-i18n="exp.section"></h2>
-                </div>
-
-                <article class="work-item animate-on-scroll">
-                    <figure>
-                        <img src="images/exp-1.png" alt="AI home design product">
-                    </figure>
-                    <div class="work-copy">
-                        <span class="date" data-i18n="exp1.date"></span>
-                        <h3 data-i18n="exp1.title"></h3>
-                        <p class="company" data-i18n="exp1.company"></p>
-                        <div class="exp-desc" data-i18n="exp1.desc.full"></div>
-                    </div>
-                </article>
-
-                <article class="work-item reverse animate-on-scroll">
-                    <figure>
-                        <img src="images/exp-2.jpg" alt="Imperial College London">
-                    </figure>
-                    <div class="work-copy">
-                        <span class="date" data-i18n="exp2.date"></span>
-                        <h3 data-i18n="exp2.title"></h3>
-                        <p class="company" data-i18n="exp2.company"></p>
-                        <div class="exp-desc" data-i18n="exp2.desc.full"></div>
-                    </div>
-                </article>
-
-                <article class="work-item animate-on-scroll">
-                    <figure>
-                        <img src="images/exp-3.jpg" alt="JD Logistics">
-                    </figure>
-                    <div class="work-copy">
-                        <span class="date" data-i18n="exp3.date"></span>
-                        <h3 data-i18n="exp3.title"></h3>
-                        <p class="company" data-i18n="exp3.company"></p>
-                        <div class="exp-desc" data-i18n="exp3.desc.full"></div>
-                    </div>
-                </article>
-
-                <div class="education-list">
-                    <article class="work-item education-item animate-on-scroll">
-                        <figure>
-                            <img src="images/exp-4.jpg" alt="USTB master's degree">
-                        </figure>
-                        <div class="work-copy">
-                            <span class="date" data-i18n="exp4.date"></span>
-                            <h3 data-i18n="exp4.title"></h3>
-                            <p class="company" data-i18n="exp4.company"></p>
-                            <div class="exp-desc" data-i18n="exp4.desc.full"></div>
+                <div class="profile-layout">
+                    <div class="profile-lead reveal">
+                        <p data-i18n="profile.lead"></p>
+                        <div class="keyword-cloud" aria-label="能力关键词">
+                            <span>Generative AI</span>
+                            <span>Operations Research</span>
+                            <span>Product Strategy</span>
+                            <span>Optimization</span>
+                            <span>Field Validation</span>
                         </div>
-                    </article>
-                    <article class="work-item education-item reverse animate-on-scroll">
+                    </div>
+
+                    <div class="method-grid">
+                        <article class="method-card reveal">
+                            <span>ASK</span>
+                            <h3 data-i18n="feature1.title"></h3>
+                            <p data-i18n="feature1.desc"></p>
+                        </article>
+                        <article class="method-card reveal">
+                            <span>FRAME</span>
+                            <h3 data-i18n="feature2.title"></h3>
+                            <p data-i18n="feature2.desc"></p>
+                        </article>
+                        <article class="method-card reveal">
+                            <span>SHIP</span>
+                            <h3 data-i18n="feature3.title"></h3>
+                            <p data-i18n="feature3.desc"></p>
+                        </article>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="education" class="panel story-panel education-panel" data-panel="education">
+            <div class="panel-inner">
+                <div class="story-top reveal">
+                    <div class="panel-heading">
+                        <p class="section-kicker" data-i18n="education.kicker"></p>
+                        <h2 data-i18n="education.title"></h2>
+                        <p class="panel-intro" data-i18n="education.intro"></p>
+                    </div>
+                    <div class="slider-tools">
+                        <span class="slider-count" data-slider-count="education">01 / 03</span>
+                        <button type="button" data-slider-prev="education" aria-label="上一段经历">←</button>
+                        <button type="button" data-slider-next="education" aria-label="下一段经历">→</button>
+                    </div>
+                </div>
+
+                <div class="story-track reveal" data-slider="education" tabindex="0" aria-label="学业经历横向滑动">
+                    <article class="story-card education-card">
                         <figure>
-                            <img src="images/exp-5.jpg" alt="USTB bachelor's degree">
+                            <picture>
+                                <source media="(max-width: 800px)" srcset="images/mobile/exp-5.webp">
+                                <img src="images/desktop/exp-5.webp" alt="北京科技大学本科时期">
+                            </picture>
                         </figure>
-                        <div class="work-copy">
-                            <span class="date" data-i18n="exp5.date"></span>
+                        <div class="story-copy">
+                            <p class="story-meta"><span>FOUNDATION</span><span data-i18n="exp5.date"></span></p>
                             <h3 data-i18n="exp5.title"></h3>
-                            <p class="company" data-i18n="exp5.company"></p>
-                            <div class="exp-desc" data-i18n="exp5.desc.full"></div>
+                            <p class="story-place" data-i18n="exp5.company"></p>
+                            <p class="story-summary" data-i18n="education.bachelor.summary"></p>
+                            <div class="story-tags"><span>数学建模</span><span>GARCH</span><span>国家一等奖</span></div>
+                            <details open>
+                                <summary data-i18n="common.details"></summary>
+                                <div data-i18n="exp5.desc.full"></div>
+                            </details>
+                        </div>
+                    </article>
+
+                    <article class="story-card education-card">
+                        <figure>
+                            <picture>
+                                <source media="(max-width: 800px)" srcset="images/mobile/exp-4.webp">
+                                <img src="images/desktop/exp-4.webp" alt="北京科技大学硕士时期">
+                            </picture>
+                        </figure>
+                        <div class="story-copy">
+                            <p class="story-meta"><span>OPTIMIZATION</span><span data-i18n="exp4.date"></span></p>
+                            <h3 data-i18n="exp4.title"></h3>
+                            <p class="story-place" data-i18n="exp4.company"></p>
+                            <p class="story-summary" data-i18n="education.master.summary"></p>
+                            <div class="story-tags"><span>运筹学</span><span>多目标优化</span><span>物流网络</span></div>
+                            <details open>
+                                <summary data-i18n="common.details"></summary>
+                                <div data-i18n="exp4.desc.full"></div>
+                            </details>
+                        </div>
+                    </article>
+
+                    <article class="story-card education-card">
+                        <figure>
+                            <picture>
+                                <source media="(max-width: 800px)" srcset="images/mobile/exp-2.webp">
+                                <img src="images/desktop/exp-2.webp" alt="帝国理工学院访问研究时期">
+                            </picture>
+                        </figure>
+                        <div class="story-copy">
+                            <p class="story-meta"><span>RESEARCH</span><span data-i18n="exp2.date"></span></p>
+                            <h3 data-i18n="exp2.title"></h3>
+                            <p class="story-place" data-i18n="exp2.company"></p>
+                            <p class="story-summary" data-i18n="education.visit.summary"></p>
+                            <div class="story-tags"><span>Reinforcement Learning</span><span>Transformer</span><span>Evolutionary AI</span></div>
+                            <details open>
+                                <summary data-i18n="common.details"></summary>
+                                <div data-i18n="exp2.desc.full"></div>
+                            </details>
                         </div>
                     </article>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="life" class="life-section">
-                <div class="section-heading animate-on-scroll">
-                    <p class="eyebrow" data-i18n="life.kicker"></p>
-                    <h2 data-i18n="life.title"></h2>
-                </div>
-                <div class="life-grid">
-                    <div class="travel-shelf animate-on-scroll" aria-label="Travel shelf">
-                        <article class="shelf-group">
-                            <span class="shelf-continent">欧洲 / Europe</span>
-                            <button class="travel-place is-active" type="button" data-country="spain">
-                                <strong>西班牙</strong>
-                                <span>Spain</span>
-                            </button>
-                            <button class="travel-place" type="button" data-country="portugal">
-                                <strong>葡萄牙</strong>
-                                <span>Portugal</span>
-                            </button>
-                        </article>
-                        <article class="shelf-group">
-                            <span class="shelf-continent">北美洲 / North America</span>
-                            <button class="travel-place" type="button" data-country="us">
-                                <strong>美国</strong>
-                                <span>United States</span>
-                            </button>
-                            <button class="travel-place" type="button" data-country="mexico">
-                                <strong>墨西哥</strong>
-                                <span>Mexico</span>
-                            </button>
-                        </article>
-                        <article class="shelf-group">
-                            <span class="shelf-continent">亚洲 / Asia</span>
-                            <button class="travel-place" type="button" data-country="singapore">
-                                <strong>新加坡</strong>
-                                <span>Singapore</span>
-                            </button>
-                            <button class="travel-place" type="button" data-country="hongkong">
-                                <strong>香港</strong>
-                                <span>Hong Kong</span>
-                            </button>
-                            <button class="travel-place" type="button" data-country="korea">
-                                <strong>韩国</strong>
-                                <span>South Korea</span>
-                            </button>
-                            <button class="travel-place" type="button" data-country="macau">
-                                <strong>澳门</strong>
-                                <span>Macau</span>
-                            </button>
-                            <button class="travel-place" type="button" data-country="malaysia">
-                                <strong>马来西亚</strong>
-                                <span>Malaysia</span>
-                            </button>
-                            <button class="travel-place" type="button" data-country="philippines">
-                                <strong>菲律宾</strong>
-                                <span>Philippines</span>
-                            </button>
-                        </article>
+        <section id="work" class="panel story-panel work-panel" data-panel="work">
+            <div class="panel-inner">
+                <div class="story-top reveal">
+                    <div class="panel-heading">
+                        <p class="section-kicker light" data-i18n="work.kicker"></p>
+                        <h2 data-i18n="work.title"></h2>
+                        <p class="panel-intro" data-i18n="work.intro"></p>
                     </div>
-                    <div class="travel-notes animate-on-scroll">
-                        <article class="travel-card is-active" data-travel-card="spain">
-                            <span data-i18n="travel.spain.meta"></span>
-                            <h3 data-i18n="travel.spain.title"></h3>
-                            <p data-i18n="travel.spain.desc"></p>
-                        </article>
-                        <article class="travel-card" data-travel-card="portugal">
-                            <span data-i18n="travel.portugal.meta"></span>
-                            <h3 data-i18n="travel.portugal.title"></h3>
-                            <p data-i18n="travel.portugal.desc"></p>
-                        </article>
-                        <article class="travel-card" data-travel-card="us">
-                            <span data-i18n="travel.us.meta"></span>
-                            <h3 data-i18n="travel.us.title"></h3>
-                            <p data-i18n="travel.us.desc"></p>
-                        </article>
-                        <article class="travel-card" data-travel-card="mexico">
-                            <span data-i18n="travel.mexico.meta"></span>
-                            <h3 data-i18n="travel.mexico.title"></h3>
-                            <p data-i18n="travel.mexico.desc"></p>
-                        </article>
-                        <article class="travel-card" data-travel-card="singapore">
-                            <span data-i18n="travel.singapore.meta"></span>
-                            <h3 data-i18n="travel.singapore.title"></h3>
-                            <p data-i18n="travel.singapore.desc"></p>
-                        </article>
-                        <article class="travel-card" data-travel-card="hongkong">
-                            <span data-i18n="travel.hongkong.meta"></span>
-                            <h3 data-i18n="travel.hongkong.title"></h3>
-                            <p data-i18n="travel.hongkong.desc"></p>
-                        </article>
-                        <article class="travel-card" data-travel-card="korea">
-                            <span data-i18n="travel.korea.meta"></span>
-                            <h3 data-i18n="travel.korea.title"></h3>
-                            <p data-i18n="travel.korea.desc"></p>
-                        </article>
-                        <article class="travel-card" data-travel-card="macau">
-                            <span data-i18n="travel.macau.meta"></span>
-                            <h3 data-i18n="travel.macau.title"></h3>
-                            <p data-i18n="travel.macau.desc"></p>
-                        </article>
-                        <article class="travel-card" data-travel-card="malaysia">
-                            <span data-i18n="travel.malaysia.meta"></span>
-                            <h3 data-i18n="travel.malaysia.title"></h3>
-                            <p data-i18n="travel.malaysia.desc"></p>
-                        </article>
-                        <article class="travel-card" data-travel-card="philippines">
-                            <span data-i18n="travel.philippines.meta"></span>
-                            <h3 data-i18n="travel.philippines.title"></h3>
-                            <p data-i18n="travel.philippines.desc"></p>
-                        </article>
+                    <div class="slider-tools inverse">
+                        <span class="slider-count" data-slider-count="work">01 / 02</span>
+                        <button type="button" data-slider-prev="work" aria-label="上一段经历">←</button>
+                        <button type="button" data-slider-next="work" aria-label="下一段经历">→</button>
                     </div>
                 </div>
-            </section>
 
-            <section id="contact" class="contact-section">
-                <div class="section-heading animate-on-scroll">
-                    <p class="eyebrow" data-i18n="contact.kicker"></p>
+                <div class="story-track reveal" data-slider="work" tabindex="0" aria-label="工作经历横向滑动">
+                    <article class="story-card work-card">
+                        <figure>
+                            <picture>
+                                <source media="(max-width: 800px)" srcset="images/mobile/exp-1.webp">
+                                <img src="images/desktop/exp-1.webp" alt="AI 家居设计产品项目">
+                            </picture>
+                        </figure>
+                        <div class="story-copy">
+                            <p class="story-meta"><span>0 → 1</span><span data-i18n="exp1.date"></span></p>
+                            <h3 data-i18n="exp1.title"></h3>
+                            <p class="story-place" data-i18n="exp1.company"></p>
+                            <p class="story-summary" data-i18n="work.ai.summary"></p>
+                            <details open>
+                                <summary data-i18n="common.details"></summary>
+                                <div data-i18n="exp1.desc.full"></div>
+                            </details>
+                        </div>
+                    </article>
+
+                    <article class="story-card work-card">
+                        <figure>
+                            <picture>
+                                <source media="(max-width: 800px)" srcset="images/mobile/exp-3.webp">
+                                <img src="images/desktop/exp-3.webp" alt="京东物流工作时期">
+                            </picture>
+                        </figure>
+                        <div class="story-copy">
+                            <p class="story-meta"><span>AI × LOGISTICS</span><span data-i18n="exp3.date"></span></p>
+                            <h3 data-i18n="exp3.title"></h3>
+                            <p class="story-place" data-i18n="exp3.company"></p>
+                            <p class="story-summary" data-i18n="work.jd.summary"></p>
+                            <details open>
+                                <summary data-i18n="common.details"></summary>
+                                <div data-i18n="exp3.desc.full"></div>
+                            </details>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="life" class="panel story-panel life-panel" data-panel="life">
+            <div class="panel-inner">
+                <div class="story-top reveal">
+                    <div class="panel-heading">
+                        <p class="section-kicker" data-i18n="life.kicker"></p>
+                        <h2 data-i18n="life.title"></h2>
+                        <p class="panel-intro" data-i18n="life.intro"></p>
+                    </div>
+                    <div class="slider-tools">
+                        <span class="slider-count" data-slider-count="life">01 / 08</span>
+                        <button type="button" data-slider-prev="life" aria-label="上一个地方">←</button>
+                        <button type="button" data-slider-next="life" aria-label="下一个地方">→</button>
+                    </div>
+                </div>
+
+                <div class="travel-track reveal" data-slider="life" tabindex="0" aria-label="旅行经历横向滑动">
+                    <article class="travel-story spain">
+                        <span class="travel-no">ES / 01</span>
+                        <p data-i18n="travel.spain.meta"></p><h3 data-i18n="travel.spain.title"></h3>
+                        <div class="travel-text" data-i18n="travel.spain.desc"></div>
+                    </article>
+                    <article class="travel-story portugal">
+                        <span class="travel-no">PT / 02</span>
+                        <p data-i18n="travel.portugal.meta"></p><h3 data-i18n="travel.portugal.title"></h3>
+                        <div class="travel-text" data-i18n="travel.portugal.desc"></div>
+                    </article>
+                    <article class="travel-story us">
+                        <span class="travel-no">US / 03</span>
+                        <p data-i18n="travel.us.meta"></p><h3 data-i18n="travel.us.title"></h3>
+                        <div class="travel-text" data-i18n="travel.us.desc"></div>
+                    </article>
+                    <article class="travel-story mexico">
+                        <span class="travel-no">MX / 04</span>
+                        <p data-i18n="travel.mexico.meta"></p><h3 data-i18n="travel.mexico.title"></h3>
+                        <div class="travel-text" data-i18n="travel.mexico.desc"></div>
+                    </article>
+                    <article class="travel-story singapore">
+                        <span class="travel-no">SG / 05</span>
+                        <p data-i18n="travel.singapore.meta"></p><h3 data-i18n="travel.singapore.title"></h3>
+                        <div class="travel-text" data-i18n="travel.singapore.desc"></div>
+                    </article>
+                    <article class="travel-story korea">
+                        <span class="travel-no">KR / 06</span>
+                        <p data-i18n="travel.korea.meta"></p><h3 data-i18n="travel.korea.title"></h3>
+                        <div class="travel-text" data-i18n="travel.korea.desc"></div>
+                    </article>
+                    <article class="travel-story malaysia">
+                        <span class="travel-no">MY / 07</span>
+                        <p data-i18n="travel.malaysia.meta"></p><h3 data-i18n="travel.malaysia.title"></h3>
+                        <div class="travel-text" data-i18n="travel.malaysia.desc"></div>
+                    </article>
+                    <article class="travel-story philippines">
+                        <span class="travel-no">PH / 08</span>
+                        <p data-i18n="travel.philippines.meta"></p><h3 data-i18n="travel.philippines.title"></h3>
+                        <div class="travel-text" data-i18n="travel.philippines.desc"></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="panel contact-panel" data-panel="contact">
+            <div class="contact-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="panel-inner contact-layout">
+                <p class="section-kicker light reveal" data-i18n="contact.kicker"></p>
+                <div class="contact-copy reveal">
+                    <p class="contact-prompt" data-i18n="contact.prompt"></p>
                     <h2 data-i18n="contact.section"></h2>
-                </div>
-                <div class="contact-body animate-on-scroll">
                     <p data-i18n="contact.intro"></p>
-                    <div class="contact-links">
-                        <a href="mailto:Guppy608@outlook.com">
-                            <span>@</span>
-                            <span data-i18n="contact.email"></span>
-                        </a>
-                        <a href="https://github.com/Guppy608" target="_blank" rel="noreferrer">
-                            <span>&lt;/&gt;</span>
-                            <span data-i18n="contact.github"></span>
-                        </a>
-                        <a href="https://www.zhihu.com/people/Guppy0608/posts" target="_blank" rel="noreferrer">
-                            <span>Zh</span>
-                            <span data-i18n="contact.zhihu"></span>
-                        </a>
-                    </div>
                 </div>
-            </section>
-        </main>
-    </div>
+                <a class="email-link reveal" href="mailto:Guppy608@outlook.com">
+                    <span>Guppy608@outlook.com</span><span>↗</span>
+                </a>
+                <div class="social-row reveal">
+                    <a href="https://github.com/Guppy608" target="_blank" rel="noreferrer">GitHub ↗</a>
+                    <a href="https://www.zhihu.com/people/Guppy0608/posts" target="_blank" rel="noreferrer">知乎 / Zhihu ↗</a>
+                </div>
+                <p class="contact-foot">AI PRODUCT · RESEARCH · FIELD NOTES · 2026</p>
+            </div>
+        </section>
+    </main>
 
     <script src="js/content.js"></script>
     <script src="js/script.js"></script>
