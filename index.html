@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="陈泽光（Guppy）的个人主页：AI 产品、优化研究与旅行观察。">
+    <meta name="description" content="陈泽光（Guppy）的个人主页：AI 产品、优化研究、旅行与随笔。">
     <meta name="theme-color" content="#111926">
-    <title>陈泽光 Guppy — AI Product · Research · Life</title>
+    <title>Guppy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=copy-2">
+    <link rel="stylesheet" href="css/essays.css?v=copy-2">
 </head>
 <body>
-    <a class="skip-link" href="#profile">跳到主要内容</a>
+    <a class="skip-link" href="#profile" data-i18n="skip.label">跳到主要内容</a>
 
     <header class="site-header">
-        <a class="brand" href="#home" aria-label="返回首页">
+        <a class="brand" href="#home" aria-label="返回首页" data-i18n-aria-label="home.aria">
             <span class="brand-name">GUPPY / 陈泽光</span>
         </a>
-        <nav class="site-nav" aria-label="主要导航">
+        <nav class="site-nav" aria-label="主要导航" data-i18n-aria-label="nav.aria">
             <a href="#profile" data-section-link="profile" data-i18n="nav.profile"></a>
             <a href="#education" data-section-link="education" data-i18n="nav.education"></a>
             <a href="#work" data-section-link="work" data-i18n="nav.work"></a>
@@ -76,7 +77,7 @@
                 <div class="profile-layout">
                     <div class="profile-lead reveal">
                         <p data-i18n="profile.lead"></p>
-                        <div class="keyword-cloud" aria-label="能力关键词">
+                        <div class="keyword-cloud" aria-label="能力关键词" data-i18n-aria-label="profile.keywords.aria">
                             <span>Generative AI</span>
                             <span>Operations Research</span>
                             <span>Product Strategy</span>
@@ -117,25 +118,25 @@
                     </div>
                     <div class="slider-tools">
                         <span class="slider-count" data-slider-count="education">01 / 03</span>
-                        <button type="button" data-slider-prev="education" aria-label="上一段经历">←</button>
-                        <button type="button" data-slider-next="education" aria-label="下一段经历">→</button>
+                        <button type="button" data-slider-prev="education" aria-label="上一段经历" data-i18n-aria-label="story.previous">←</button>
+                        <button type="button" data-slider-next="education" aria-label="下一段经历" data-i18n-aria-label="story.next">→</button>
                     </div>
                 </div>
 
-                <div class="story-track reveal" data-slider="education" tabindex="0" aria-label="学业经历横向滑动">
+                <div class="story-track reveal" data-slider="education" tabindex="0" aria-label="学业经历横向滑动" data-i18n-aria-label="education.slider.aria">
                     <article class="story-card education-card">
                         <figure>
                             <picture>
                                 <source media="(max-width: 800px)" srcset="images/mobile/exp-5.webp">
-                                <img src="images/desktop/exp-5.webp" alt="北京科技大学本科时期">
+                                <img src="images/desktop/exp-5.webp" alt="北京科技大学本科时期" data-i18n-alt="exp5.photo.alt">
                             </picture>
                         </figure>
                         <div class="story-copy">
                             <p class="story-meta"><span>FOUNDATION</span><span data-i18n="exp5.date"></span></p>
-                            <h3 data-i18n="exp5.title"></h3>
-                            <p class="story-place" data-i18n="exp5.company"></p>
+                            <h3 data-i18n="exp5.story.title"></h3>
+                            <p class="story-place"><span data-i18n="exp5.company"></span><span aria-hidden="true">·</span><span data-i18n="exp5.title"></span></p>
                             <p class="story-summary" data-i18n="education.bachelor.summary"></p>
-                            <div class="story-tags"><span>数学建模</span><span>GARCH</span><span>国家一等奖</span></div>
+                            <div class="story-tags"><span data-i18n="tag.modeling">数学建模</span><span>GARCH</span><span data-i18n="tag.firstprize">国家一等奖</span></div>
                             <details open>
                                 <summary data-i18n="common.details"></summary>
                                 <div data-i18n="exp5.desc.full"></div>
@@ -147,15 +148,15 @@
                         <figure>
                             <picture>
                                 <source media="(max-width: 800px)" srcset="images/mobile/exp-4.webp">
-                                <img src="images/desktop/exp-4.webp" alt="北京科技大学硕士时期">
+                                <img src="images/desktop/exp-4.webp" alt="北京科技大学硕士时期" data-i18n-alt="exp4.photo.alt">
                             </picture>
                         </figure>
                         <div class="story-copy">
                             <p class="story-meta"><span>OPTIMIZATION</span><span data-i18n="exp4.date"></span></p>
-                            <h3 data-i18n="exp4.title"></h3>
-                            <p class="story-place" data-i18n="exp4.company"></p>
+                            <h3 data-i18n="exp4.story.title"></h3>
+                            <p class="story-place"><span data-i18n="exp4.company"></span><span aria-hidden="true">·</span><span data-i18n="exp4.title"></span></p>
                             <p class="story-summary" data-i18n="education.master.summary"></p>
-                            <div class="story-tags"><span>运筹学</span><span>多目标优化</span><span>物流网络</span></div>
+                            <div class="story-tags"><span data-i18n="tag.or">运筹学</span><span data-i18n="tag.multiobjective">多目标优化</span><span data-i18n="tag.logistics">物流网络</span></div>
                             <details open>
                                 <summary data-i18n="common.details"></summary>
                                 <div data-i18n="exp4.desc.full"></div>
@@ -167,13 +168,13 @@
                         <figure>
                             <picture>
                                 <source media="(max-width: 800px)" srcset="images/mobile/exp-2.webp">
-                                <img src="images/desktop/exp-2.webp" alt="帝国理工学院访问研究时期">
+                                <img src="images/desktop/exp-2.webp" alt="帝国理工学院访问研究时期" data-i18n-alt="exp2.photo.alt">
                             </picture>
                         </figure>
                         <div class="story-copy">
                             <p class="story-meta"><span>RESEARCH</span><span data-i18n="exp2.date"></span></p>
-                            <h3 data-i18n="exp2.title"></h3>
-                            <p class="story-place" data-i18n="exp2.company"></p>
+                            <h3 data-i18n="exp2.story.title"></h3>
+                            <p class="story-place"><span data-i18n="exp2.company"></span><span aria-hidden="true">·</span><span data-i18n="exp2.title"></span></p>
                             <p class="story-summary" data-i18n="education.visit.summary"></p>
                             <div class="story-tags"><span>Reinforcement Learning</span><span>Transformer</span><span>Evolutionary AI</span></div>
                             <details open>
@@ -196,23 +197,23 @@
                     </div>
                     <div class="slider-tools inverse">
                         <span class="slider-count" data-slider-count="work">01 / 02</span>
-                        <button type="button" data-slider-prev="work" aria-label="上一段经历">←</button>
-                        <button type="button" data-slider-next="work" aria-label="下一段经历">→</button>
+                        <button type="button" data-slider-prev="work" aria-label="上一段经历" data-i18n-aria-label="story.previous">←</button>
+                        <button type="button" data-slider-next="work" aria-label="下一段经历" data-i18n-aria-label="story.next">→</button>
                     </div>
                 </div>
 
-                <div class="story-track reveal" data-slider="work" tabindex="0" aria-label="工作经历横向滑动">
+                <div class="story-track reveal" data-slider="work" tabindex="0" aria-label="工作经历横向滑动" data-i18n-aria-label="work.slider.aria">
                     <article class="story-card work-card">
                         <figure>
                             <picture>
                                 <source media="(max-width: 800px)" srcset="images/mobile/exp-1.webp">
-                                <img src="images/desktop/exp-1.webp" alt="AI 家居设计产品项目">
+                                <img src="images/desktop/exp-1.webp" alt="AI 家居设计产品项目" data-i18n-alt="exp1.photo.alt">
                             </picture>
                         </figure>
                         <div class="story-copy">
                             <p class="story-meta"><span>0 → 1</span><span data-i18n="exp1.date"></span></p>
-                            <h3 data-i18n="exp1.title"></h3>
-                            <p class="story-place" data-i18n="exp1.company"></p>
+                            <h3 data-i18n="exp1.story.title"></h3>
+                            <p class="story-place"><span data-i18n="exp1.company"></span><span aria-hidden="true">·</span><span data-i18n="exp1.title"></span></p>
                             <p class="story-summary" data-i18n="work.ai.summary"></p>
                             <details open>
                                 <summary data-i18n="common.details"></summary>
@@ -225,13 +226,13 @@
                         <figure>
                             <picture>
                                 <source media="(max-width: 800px)" srcset="images/mobile/exp-3.webp">
-                                <img src="images/desktop/exp-3.webp" alt="京东物流工作时期">
+                                <img src="images/desktop/exp-3.webp" alt="京东物流工作时期" data-i18n-alt="exp3.photo.alt">
                             </picture>
                         </figure>
                         <div class="story-copy">
                             <p class="story-meta"><span>AI × LOGISTICS</span><span data-i18n="exp3.date"></span></p>
-                            <h3 data-i18n="exp3.title"></h3>
-                            <p class="story-place" data-i18n="exp3.company"></p>
+                            <h3 data-i18n="exp3.story.title"></h3>
+                            <p class="story-place"><span data-i18n="exp3.company"></span><span aria-hidden="true">·</span><span data-i18n="exp3.title"></span></p>
                             <p class="story-summary" data-i18n="work.jd.summary"></p>
                             <details open>
                                 <summary data-i18n="common.details"></summary>
@@ -245,20 +246,44 @@
 
         <section id="life" class="panel story-panel life-panel" data-panel="life">
             <div class="panel-inner">
-                <div class="story-top reveal">
-                    <div class="panel-heading">
-                        <p class="section-kicker" data-i18n="life.kicker"></p>
-                        <h2 data-i18n="life.title"></h2>
-                        <p class="panel-intro" data-i18n="life.intro"></p>
+                <div class="life-heading panel-heading reveal">
+                    <p class="section-kicker">Life / Notes</p>
+                    <h2 data-i18n="life.title"></h2>
+                    <p class="panel-intro" data-i18n="life.intro"></p>
+                </div>
+
+                <section class="essays-section" aria-labelledby="essays-heading" hidden>
+                    <div class="life-chapter-heading reveal">
+                        <div>
+                            <p class="section-kicker">01 / ESSAYS</p>
+                            <h3 id="essays-heading" data-i18n="essays.heading"></h3>
+                            <p class="life-chapter-intro" data-i18n="essays.intro"></p>
+                        </div>
+                        <div class="slider-tools">
+                            <span class="slider-count" data-slider-count="essays" aria-live="polite"></span>
+                            <button type="button" data-slider-prev="essays" aria-label="上一篇随笔" data-i18n-aria-label="essays.previous">←</button>
+                            <button type="button" data-slider-next="essays" aria-label="下一篇随笔" data-i18n-aria-label="essays.next">→</button>
+                        </div>
+                    </div>
+                    <div class="travel-track essay-track reveal" data-slider="essays" tabindex="0" aria-labelledby="essays-heading"></div>
+                </section>
+
+                <div class="story-top life-travel-heading reveal">
+                    <div class="life-chapter-heading">
+                        <div>
+                            <p class="section-kicker">02 / TRAVELS</p>
+                            <h3 data-i18n="essays.travel.heading"></h3>
+                            <p class="life-chapter-intro" data-i18n="essays.travel.intro"></p>
+                        </div>
                     </div>
                     <div class="slider-tools">
                         <span class="slider-count" data-slider-count="life">01 / 08</span>
-                        <button type="button" data-slider-prev="life" aria-label="上一个地方">←</button>
-                        <button type="button" data-slider-next="life" aria-label="下一个地方">→</button>
+                        <button type="button" data-slider-prev="life" aria-label="上一个地方" data-i18n-aria-label="life.previous">←</button>
+                        <button type="button" data-slider-next="life" aria-label="下一个地方" data-i18n-aria-label="life.next">→</button>
                     </div>
                 </div>
 
-                <div class="travel-track reveal" data-slider="life" tabindex="0" aria-label="旅行经历横向滑动">
+                <div class="travel-track reveal" data-slider="life" tabindex="0" aria-label="旅行经历横向滑动" data-i18n-aria-label="life.slider.aria">
                     <article class="travel-story spain">
                         <span class="travel-no">ES / 01</span>
                         <p data-i18n="travel.spain.meta"></p><h3 data-i18n="travel.spain.title"></h3>
@@ -317,14 +342,39 @@
                 </a>
                 <div class="social-row reveal">
                     <a href="https://github.com/Guppy608" target="_blank" rel="noreferrer">GitHub ↗</a>
-                    <a href="https://www.zhihu.com/people/Guppy0608/posts" target="_blank" rel="noreferrer">知乎 / Zhihu ↗</a>
+                    <a href="https://www.zhihu.com/people/Guppy0608/posts" target="_blank" rel="noreferrer"><span data-i18n="contact.zhihu"></span> ↗</a>
                 </div>
                 <p class="contact-foot">AI PRODUCT · RESEARCH · FIELD NOTES · 2026</p>
             </div>
         </section>
     </main>
 
-    <script src="js/content.js"></script>
-    <script src="js/script.js"></script>
+    <dialog id="essayReader" class="essay-reader" aria-labelledby="essayReaderTitle">
+        <article class="essay-paper">
+            <div class="essay-reader-toolbar">
+                <span class="essay-reader-label" data-i18n="essays.reader.label"></span>
+                <button class="essay-close" type="button" data-close-essay autofocus>
+                    <span data-i18n="essays.close"></span><span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="essay-paper-inner">
+                <header class="essay-paper-heading">
+                    <p class="essay-paper-number"></p>
+                    <h2 id="essayReaderTitle" lang="zh-CN"></h2>
+                    <p class="essay-reader-meta"></p>
+                </header>
+                <div id="essayReaderBody" class="essay-prose" lang="zh-CN"></div>
+                <footer class="essay-paper-footer">
+                    <span aria-hidden="true">· · ·</span>
+                    <button type="button" data-close-essay data-i18n="essays.finish"></button>
+                </footer>
+            </div>
+        </article>
+    </dialog>
+
+    <script src="js/content.js?v=copy-2"></script>
+    <script src="js/essays.js"></script>
+    <script src="js/essays-reader.js?v=copy-2"></script>
+    <script src="js/script.js?v=copy-2"></script>
 </body>
 </html>

@@ -7,6 +7,18 @@
     var typingTimer = null;
     var roleIndex = 0;
 
+    function updateDetailsLabels() {
+        document.querySelectorAll('.story-copy details').forEach(function(details) {
+            var summary = details.querySelector('summary[data-i18n="common.details"]');
+            var key = details.open ? "common.details.open" : "common.details";
+            if (summary) summary.textContent = CV_CONTENT[key][currentLang];
+        });
+    }
+
+    document.querySelectorAll('.story-copy details').forEach(function(details) {
+        details.addEventListener("toggle", updateDetailsLabels);
+    });
+
     function renderLanguage(lang) {
         document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
         document.querySelectorAll("[data-i18n]").forEach(function(el) {
@@ -17,10 +29,22 @@
             }
         });
 
+        ["aria-label", "alt"].forEach(function(attribute) {
+            document.querySelectorAll("[data-i18n-" + attribute + "]").forEach(function(el) {
+                var key = el.getAttribute("data-i18n-" + attribute);
+                if (CV_CONTENT[key]) el.setAttribute(attribute, CV_CONTENT[key][lang]);
+            });
+        });
+        var description = document.querySelector('meta[name="description"]');
+        if (description) description.content = CV_CONTENT["site.description"][lang];
+        updateDetailsLabels();
+
         if (langToggle) {
             langToggle.textContent = lang === "zh" ? "EN" : "中文";
             langToggle.setAttribute("aria-label", lang === "zh" ? "Switch to English" : "切换至中文");
         }
+
+        document.dispatchEvent(new CustomEvent("cv:languagechange", { detail: { language: lang } }));
 
         roleIndex = 0;
         startRoleLoop();
@@ -99,7 +123,7 @@
                     link.classList.toggle("is-active", link.getAttribute("data-section-link") === panelName);
                 });
             });
-        }, { threshold: 0.48 });
+        }, { threshold: 0, rootMargin: "-20% 0px -65% 0px" });
 
         panels.forEach(function(panel) {
             panelObserver.observe(panel);
@@ -126,13 +150,14 @@
     /* Horizontal chapters: buttons, keyboard, vertical-wheel conversion, mouse drag. */
     document.querySelectorAll("[data-slider]").forEach(function(track) {
         var name = track.getAttribute("data-slider");
+        var isEssayTrack = name === "essays";
         var items = Array.prototype.slice.call(track.children);
         var prevButton = document.querySelector("[data-slider-prev=\"" + name + "\"]");
         var nextButton = document.querySelector("[data-slider-next=\"" + name + "\"]");
         var count = document.querySelector("[data-slider-count=\"" + name + "\"]");
         var activeIndex = 0;
         var countFrame = null;
-        var drag = { active: false, startX: 0, startScroll: 0 };
+        var drag = { active: false, moved: false, startX: 0, startScroll: 0 };
 
         function itemStride() {
             if (items.length < 2) return items[0] ? items[0].getBoundingClientRect().width : track.clientWidth;
@@ -149,8 +174,15 @@
                     activeIndex = index;
                 }
             });
+            if (isEssayTrack && track.scrollWidth > track.clientWidth + 1 && track.scrollLeft >= track.scrollWidth - track.clientWidth - 1) {
+                activeIndex = items.length - 1;
+            }
             if (count) {
                 count.textContent = String(activeIndex + 1).padStart(2, "0") + " / " + String(items.length).padStart(2, "0");
+            }
+            if (isEssayTrack) {
+                if (prevButton) prevButton.disabled = track.scrollLeft <= 1;
+                if (nextButton) nextButton.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
             }
             countFrame = null;
         }
@@ -177,17 +209,27 @@
         });
 
         track.addEventListener("pointerdown", function(event) {
+            if (isEssayTrack) drag.moved = false;
             if (event.pointerType !== "mouse" || event.button !== 0) return;
-            if (event.target.closest("a, button, summary, details")) return;
+            if (event.target.closest("a, button, summary, details") && !(isEssayTrack && event.target.closest(".essay-open"))) return;
             drag.active = true;
+            drag.moved = false;
             drag.startX = event.clientX;
             drag.startScroll = track.scrollLeft;
-            track.classList.add("is-dragging");
-            track.setPointerCapture(event.pointerId);
+            if (!isEssayTrack) {
+                track.classList.add("is-dragging");
+                track.setPointerCapture(event.pointerId);
+            }
         });
 
         track.addEventListener("pointermove", function(event) {
             if (!drag.active) return;
+            if (isEssayTrack && !drag.moved) {
+                if (Math.abs(event.clientX - drag.startX) < 6) return;
+                drag.moved = true;
+                track.classList.add("is-dragging");
+                track.setPointerCapture(event.pointerId);
+            }
             track.scrollLeft = drag.startScroll - (event.clientX - drag.startX);
         });
 
@@ -202,6 +244,18 @@
 
         track.addEventListener("pointerup", stopDrag);
         track.addEventListener("pointercancel", stopDrag);
+        if (isEssayTrack) {
+            track.addEventListener("click", function(event) {
+                if (drag.moved && event.detail !== 0) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+            }, true);
+            track.addEventListener("pointerleave", function(event) {
+                if (!drag.moved) stopDrag(event);
+            });
+            if ("ResizeObserver" in window) new ResizeObserver(updateCount).observe(track);
+        }
         updateCount();
     });
 

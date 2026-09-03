@@ -1,0 +1,386 @@
+/* Shared life and essay presentation; compact layouts follow below. */
+html {
+    scrollbar-gutter: stable;
+}
+
+.life-heading,
+.essays-section:not([hidden]) {
+    display: block;
+}
+
+.life-panel > .panel-inner > .life-heading {
+    margin-bottom: 40px;
+}
+
+.life-chapter-heading {
+    align-items: end;
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+.life-chapter-heading .section-kicker {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+}
+
+.life-chapter-heading h3 {
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1.3;
+}
+
+.life-chapter-intro {
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 10px;
+}
+
+.life-travel-heading {
+    border-top: 1px solid var(--line);
+    margin-top: 64px;
+    padding-top: 40px;
+}
+
+.essay-track {
+    margin-top: 26px;
+    padding-bottom: 18px;
+}
+
+.essay-card {
+    background: var(--paper-bright);
+    border: 1px solid rgba(91, 69, 45, 0.16);
+    border-radius: 5px 22px 22px 5px;
+    box-shadow: 0 5px 0 -2px #e2d6c3, 0 11px 18px -16px #63513d;
+    display: flex;
+    flex: 0 0 min(540px, 43vw);
+    flex-direction: column;
+    min-height: 300px;
+    padding: 24px 34px 20px;
+    position: relative;
+    scroll-snap-align: start;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.essay-track[data-single="true"] .essay-card {
+    flex-basis: min(760px, 76vw);
+}
+
+.essay-card:hover {
+    background: #fffaf0;
+    border-color: rgba(159, 93, 57, 0.45);
+}
+
+.essay-card:focus-within {
+    outline: 2px solid var(--orange);
+    outline-offset: 4px;
+}
+
+.essay-card-top,
+.essay-card-bottom {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.essay-card-top {
+    color: #786c5c;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+}
+
+.essay-card h4 {
+    font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+    font-size: clamp(27px, 2.5vw, 36px);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 1.4;
+    margin-top: 20px;
+    overflow-wrap: anywhere;
+}
+
+.essay-excerpt {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    color: #635f56;
+    display: -webkit-box;
+    font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+    font-size: 17px;
+    line-height: 1.85;
+    margin: 14px 0 22px;
+    overflow: hidden;
+    white-space: pre-line;
+}
+
+.essay-card-bottom {
+    border-top: 1px solid rgba(91, 69, 45, 0.15);
+    margin-top: auto;
+    padding-top: 17px;
+}
+
+.essay-tags {
+    color: #817460;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+}
+
+.essay-open {
+    background: none;
+    border: 0;
+    color: #986044;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.essay-open::after {
+    content: "";
+    inset: 0;
+    position: absolute;
+}
+
+.essay-open:focus-visible {
+    outline: none;
+}
+
+.essay-track.is-dragging,
+.essay-track.is-dragging .essay-open {
+    cursor: grabbing;
+}
+
+.essays-section .slider-tools button:disabled {
+    background: transparent;
+    border-color: rgba(24, 32, 42, 0.08);
+    color: rgba(24, 32, 42, 0.25);
+    cursor: default;
+    transform: none;
+}
+
+/* Native dialog lives in the browser top layer, above navigation and texture. */
+html.essay-reader-open {
+    overflow: hidden;
+}
+
+.essay-reader {
+    background: transparent;
+    border: 0;
+    color: var(--ink);
+    height: 100%;
+    margin: 0;
+    max-height: none;
+    max-width: none;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 32px 40px;
+    scrollbar-gutter: stable;
+    width: 100%;
+}
+
+.essay-reader::backdrop {
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    background: rgba(17, 25, 38, 0.72);
+}
+
+.essay-paper {
+    background-color: #fbf7ed;
+    background-image: radial-gradient(rgba(120, 98, 65, 0.09) 0.5px, transparent 0.5px);
+    background-size: 6px 6px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    box-shadow: 0 24px 100px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    max-width: 900px;
+    position: relative;
+}
+
+.essay-reader-toolbar {
+    align-items: center;
+    background: rgba(251, 247, 237, 0.97);
+    border-bottom: 1px solid rgba(130, 97, 57, 0.15);
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 13px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.essay-reader-label {
+    color: #8b7961;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+}
+
+.essay-close {
+    align-items: center;
+    background: transparent;
+    border: 1px solid rgba(130, 97, 57, 0.2);
+    border-radius: 999px;
+    color: #6f6251;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 12px;
+    gap: 14px;
+    min-height: 38px;
+    padding: 4px 15px;
+}
+
+.essay-close > span:last-child {
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.essay-close:hover {
+    background: #eee6d8;
+}
+
+.essay-close:focus-visible,
+.essay-paper-footer button:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 3px;
+}
+
+.essay-paper-inner {
+    margin: 0 auto;
+    max-width: 768px;
+    padding: 62px 40px 40px;
+}
+
+.essay-paper-heading {
+    border-bottom: 1px solid rgba(130, 97, 57, 0.24);
+    margin-bottom: 38px;
+    padding-bottom: 34px;
+}
+
+.essay-paper-number {
+    color: #9c7855;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    margin-bottom: 18px;
+}
+
+.essay-paper-heading h2 {
+    font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.essay-reader-meta {
+    color: #8b7c68;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    margin-top: 16px;
+}
+
+.essay-prose {
+    color: #383a36;
+    font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+    font-size: 19px;
+    letter-spacing: 0.025em;
+    line-height: 2;
+    overflow-wrap: anywhere;
+}
+
+.essay-prose p {
+    margin: 0 0 1.5em;
+    white-space: pre-line;
+}
+
+.essay-paper-footer {
+    align-items: center;
+    border-top: 1px solid rgba(130, 97, 57, 0.24);
+    color: #a48e70;
+    display: flex;
+    font-size: 15px;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding-top: 25px;
+}
+
+.essay-paper-footer button {
+    background: transparent;
+    border: 0;
+    color: #8b6848;
+    cursor: pointer;
+    font-size: 12px;
+    min-height: 38px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .essay-reader[open] .essay-paper {
+        animation: open-letter 0.25s ease-out;
+    }
+
+    @keyframes open-letter {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+}
+
+
+@media (max-width: 800px) {
+    .life-panel > .panel-inner > .life-heading {
+        margin-bottom: 38px;
+    }
+
+    .life-chapter-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .life-chapter-heading h3 { font-size: 26px; }
+    .life-chapter-intro { font-size: 13px; }
+    .life-travel-heading { margin-top: 40px; padding-top: 30px; }
+    .essay-track { margin-top: 20px; }
+
+    .essay-card {
+        flex-basis: 86vw;
+        min-height: 300px;
+        padding: 22px;
+    }
+
+    .essay-track[data-single="true"] .essay-card {
+        flex-basis: calc(100vw - 2rem);
+    }
+
+    .essay-card h4 { font-size: 27px; }
+    .essay-card-top { font-size: 9px; gap: 10px; }
+    .essay-card-bottom { gap: 12px; }
+    .essay-excerpt { font-size: 16px; }
+    .essay-open { min-height: 44px; }
+    .essay-tags { font-size: 10px; }
+
+    .essay-reader {
+        height: 100dvh;
+        padding: max(8px, env(safe-area-inset-top)) 8px max(8px, env(safe-area-inset-bottom));
+    }
+
+    .essay-reader-toolbar {
+        padding: 10px 16px;
+        top: env(safe-area-inset-top, 0px);
+    }
+
+    .essay-reader-label { font-size: 9px; letter-spacing: 0.1em; }
+    .essay-close { min-height: 44px; }
+    .essay-paper-inner { padding: 32px 22px 24px; }
+    .essay-paper-heading { margin-bottom: 28px; padding-bottom: 24px; }
+    .essay-paper-heading h2 { font-size: clamp(25px, 7.5vw, 34px); }
+    .essay-reader-meta { line-height: 1.8; }
+    .essay-prose { font-size: 17px; line-height: 1.95; letter-spacing: 0.015em; }
+    .essay-paper-footer { margin-top: 32px; }
+    .essay-paper-footer button { min-height: 44px; }
+}
