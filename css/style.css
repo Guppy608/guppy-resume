@@ -51,14 +51,12 @@ a {
     color: inherit;
 }
 
-button,
-summary {
+button {
     font: inherit;
 }
 
 button,
-a,
-summary {
+a {
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -858,33 +856,13 @@ html[lang="en"] .panel-heading h2 {
     margin-top: 1.25rem;
 }
 
-.story-copy details {
+.story-details {
     border-top: 1px solid var(--line);
     color: var(--ink-soft);
     font-size: 0.78rem;
     line-height: 1.72;
     margin-top: 1.25rem;
     padding-top: 0.8rem;
-}
-
-.story-copy summary {
-    color: var(--ink);
-    cursor: pointer;
-    font-weight: 800;
-    list-style: none;
-}
-
-.story-copy summary::after {
-    content: "＋";
-    float: right;
-}
-
-.story-copy details[open] summary::after {
-    content: "－";
-}
-
-.story-copy details > div {
-    margin-top: 0.8rem;
 }
 
 .work-card {

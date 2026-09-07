@@ -17,10 +17,6 @@ var CV_CONTENT = {
     "hero.cta.contact": {"zh": "打个招呼", "en": "Say hello"},
     "hero.scroll": {"zh": "往下看看", "en": "Keep exploring"},
 
-    // Common
-    "common.details.open": {"zh": "", "en": ""},
-    "common.details": {"zh": "", "en": ""},
-
     // Profile
     "profile.kicker": { zh: "Profile", en: "Profile" },
     "profile.title": {"zh": "<span class=\"line-segment\">遇到复杂的事，</span><br class=\"mobile-break\"><span class=\"line-segment\">习惯拆开看看。</span>", "en": "I like taking difficult problems apart."},

@@ -7,18 +7,6 @@
     var typingTimer = null;
     var roleIndex = 0;
 
-    function updateDetailsLabels() {
-        document.querySelectorAll('.story-copy details').forEach(function(details) {
-            var summary = details.querySelector('summary[data-i18n="common.details"]');
-            var key = details.open ? "common.details.open" : "common.details";
-            if (summary) summary.textContent = CV_CONTENT[key][currentLang];
-        });
-    }
-
-    document.querySelectorAll('.story-copy details').forEach(function(details) {
-        details.addEventListener("toggle", updateDetailsLabels);
-    });
-
     function renderLanguage(lang) {
         document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
         document.querySelectorAll("[data-i18n]").forEach(function(el) {
@@ -37,8 +25,6 @@
         });
         var description = document.querySelector('meta[name="description"]');
         if (description) description.content = CV_CONTENT["site.description"][lang];
-        updateDetailsLabels();
-
         if (langToggle) {
             langToggle.textContent = lang === "zh" ? "EN" : "中文";
             langToggle.setAttribute("aria-label", lang === "zh" ? "Switch to English" : "切换至中文");
@@ -211,7 +197,7 @@
         track.addEventListener("pointerdown", function(event) {
             if (isEssayTrack) drag.moved = false;
             if (event.pointerType !== "mouse" || event.button !== 0) return;
-            if (event.target.closest("a, button, summary, details") && !(isEssayTrack && event.target.closest(".essay-open"))) return;
+            if (event.target.closest("a, button") && !(isEssayTrack && event.target.closest(".essay-open"))) return;
             drag.active = true;
             drag.moved = false;
             drag.startX = event.clientX;
