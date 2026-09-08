@@ -26,6 +26,17 @@
         return language() === "en" ? "~" + minutes + " min · Chinese" : "约 " + minutes + " 分钟 · 中文";
     }
 
+    function formattedDate(essay) {
+        var parts = String(essay.date || "").split("-").map(Number);
+        if (parts.length !== 3 || parts.some(function(part) { return !part; })) return essay.date || "";
+        return new Intl.DateTimeFormat(language() === "en" ? "en-US" : "zh-CN", {
+            year: "numeric",
+            month: language() === "en" ? "short" : "long",
+            day: "numeric",
+            timeZone: "UTC"
+        }).format(new Date(Date.UTC(parts[0], parts[1] - 1, parts[2])));
+    }
+
     function element(tag, className, text) {
         var node = document.createElement(tag);
         if (className) node.className = className;
@@ -37,17 +48,15 @@
         var card = element("article", "essay-card");
         var top = element("div", "essay-card-top");
         top.appendChild(element("span", "", "ESSAY / " + String(index + 1).padStart(2, "0")));
-        top.appendChild(element("span", "essay-reading-time", readingTime(essay)));
+        var date = element("time", "essay-date", formattedDate(essay));
+        date.dateTime = essay.date;
+        top.appendChild(date);
 
         var heading = element("h4", "", essay.title);
         heading.id = "essay-title-" + essay.id;
         heading.lang = "zh-CN";
-        var excerpt = element("p", "essay-excerpt", essay.excerpt);
-        excerpt.lang = "zh-CN";
         var bottom = element("div", "essay-card-bottom");
-        var tags = element("span", "essay-tags", (essay.tags || []).join(" / "));
-        tags.lang = "zh-CN";
-        bottom.appendChild(tags);
+        bottom.appendChild(element("span", "essay-reading-time", readingTime(essay)));
         var open = element("button", "essay-open");
         open.type = "button";
         open.id = "essay-open-" + essay.id;
@@ -57,7 +66,7 @@
         open.setAttribute("aria-controls", "essayReader");
         open.addEventListener("click", function() { openEssay(essay, index, open); });
         bottom.appendChild(open);
-        card.append(top, heading, excerpt, bottom);
+        card.append(top, heading, bottom);
         track.appendChild(card);
     });
     track.dataset.single = String(essays.length === 1);
@@ -65,12 +74,15 @@
 
     function updateLanguage() {
         var lang = language();
+        track.querySelectorAll(".essay-date").forEach(function(node, index) {
+            node.textContent = formattedDate(essays[index]);
+        });
         track.querySelectorAll(".essay-reading-time").forEach(function(node, index) {
             node.textContent = readingTime(essays[index]);
         });
         section.querySelector('[data-slider-prev="essays"]').setAttribute("aria-label", lang === "en" ? "Previous essay" : "上一篇随笔");
         section.querySelector('[data-slider-next="essays"]').setAttribute("aria-label", lang === "en" ? "Next essay" : "下一篇随笔");
-        if (activeEssay) meta.textContent = (activeEssay.tags || []).join(" · ") + "　/　" + readingTime(activeEssay);
+        if (activeEssay) meta.textContent = formattedDate(activeEssay) + "　/　" + readingTime(activeEssay);
     }
 
     function openEssay(essay, index, button) {
