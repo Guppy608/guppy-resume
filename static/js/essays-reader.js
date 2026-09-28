@@ -20,12 +20,6 @@
         return document.documentElement.lang === "en" ? "en" : "zh";
     }
 
-    function readingTime(essay) {
-        // An estimate, based on approximately 350 non-whitespace characters/min.
-        var minutes = Math.max(1, Math.ceil(essay.body.replace(/\s/g, "").length / 350));
-        return language() === "en" ? "~" + minutes + " min · Chinese" : "约 " + minutes + " 分钟 · 中文";
-    }
-
     function formattedDate(essay) {
         var parts = String(essay.date || "").split("-").map(Number);
         if (parts.length !== 3 || parts.some(function(part) { return !part; })) return essay.date || "";
@@ -44,7 +38,9 @@
         return node;
     }
 
-    essays.forEach(function(essay, index) {
+    essays.sort(function(a, b) {
+        return String(a.id).localeCompare(String(b.id), undefined, { numeric: true });
+    }).forEach(function(essay, index) {
         var card = element("article", "essay-card");
         var top = element("div", "essay-card-top");
         top.appendChild(element("span", "", "ESSAY / " + String(index + 1).padStart(2, "0")));
@@ -56,7 +52,6 @@
         heading.id = "essay-title-" + essay.id;
         heading.lang = "zh-CN";
         var bottom = element("div", "essay-card-bottom");
-        bottom.appendChild(element("span", "essay-reading-time", readingTime(essay)));
         var open = element("button", "essay-open");
         open.type = "button";
         open.id = "essay-open-" + essay.id;
@@ -77,12 +72,9 @@
         track.querySelectorAll(".essay-date").forEach(function(node, index) {
             node.textContent = formattedDate(essays[index]);
         });
-        track.querySelectorAll(".essay-reading-time").forEach(function(node, index) {
-            node.textContent = readingTime(essays[index]);
-        });
         section.querySelector('[data-slider-prev="essays"]').setAttribute("aria-label", lang === "en" ? "Previous essay" : "上一篇随笔");
         section.querySelector('[data-slider-next="essays"]').setAttribute("aria-label", lang === "en" ? "Next essay" : "下一篇随笔");
-        if (activeEssay) meta.textContent = formattedDate(activeEssay) + "　/　" + readingTime(activeEssay);
+        if (activeEssay) meta.textContent = formattedDate(activeEssay);
     }
 
     function openEssay(essay, index, button) {
