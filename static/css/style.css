@@ -1014,7 +1014,7 @@ html[lang="en"] .travel-story h3 {
     }
 
     .hero-copy {
-        padding-bottom: 8vh;
+        padding-bottom: clamp(250px, 45vh, 380px);
     }
 
     .hero-copy h1 {
@@ -1025,14 +1025,8 @@ html[lang="en"] .travel-story h3 {
         max-width: 34ch;
     }
 
-    .orbit-one {
-        right: -32vw;
-        top: 27vh;
-    }
-
-    .orbit-two {
-        right: -12vw;
-        top: 38vh;
+    .hero-orbit {
+        display: none;
     }
 
     .panel-heading h2 {
@@ -1144,6 +1138,12 @@ html[lang="en"] .travel-story h3 {
 
     html[lang="zh-CN"] .contact-copy h2 {
         font-size: 3.15rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-copy {
+        padding-bottom: clamp(250px, 39vh, 290px);
     }
 }
 
