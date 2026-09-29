@@ -22,7 +22,7 @@ var CV_CONTENT = {
     "work.kicker": { zh: "Product / Impact", en: "Product / Impact" },
     "work.title": { zh: "<span>我写代码的状态</span>", en: "<span>This is what my code looks like</span>" },
     "work.intro": { zh: "递归，但没有 base case", en: "Recursion, but without a base case." },
-    "work.ai.summary": { zh: "我的复杂度是 O(n·log n)，但打工是 O(2^n)", en: "My algorithm runs in O(n·log n), but my day job runs in O(2^n)." },
+    "work.ai.summary": { zh: "我的复杂度是 O(n log n)，但打工是 O(2^n)", en: "My algorithm runs in O(n log n), but my day job runs in O(2^n)." },
     "work.jd.summary": { zh: "但所有问题都能回溯。", en: "But every problem can be backtracked." },
 
     // Experience
